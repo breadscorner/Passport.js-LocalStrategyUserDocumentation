@@ -4,8 +4,9 @@ site_name: Passport.js
 
 nav:
   - Home: 'index.md'
-  - Steps:
-    - Preliminary: 'preliminary.md'
+  - Instructions:
+    - Preliminary Setup: 'preliminary.md'
     - Routes: 'routes.md'
     - Strategies: 'strategies.md'
+  - Troubleshooting: 'trouble.md'
   - Glossary: 'glossary.md'
