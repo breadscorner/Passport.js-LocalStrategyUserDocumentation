@@ -30,7 +30,7 @@ Regular text
 
 Here's a sentence with a footnote. [^1]  
 
-[Next Page: Glossary](/glossary)
+[Next Page: Preliminary Setup](/preliminary)
 
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
