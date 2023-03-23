@@ -26,7 +26,7 @@ Regular text
 `plain code`  
 [Passport.js](https://www.passportjs.org/)
 ---
-![Passport Local](https://res.cloudinary.com/practicaldev/image/fetch/s--kyypBiVD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/9ngdmhfexbyafu2p5cll.png)
+![Passport Local](https://res.cloudinary.com/practicaldev/image/fetch/s--kyypBiVD--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/<https://dev-to-uploads.s3.amazonaws.com/i/9ngdmhfexbyafu2p5cll.png)>
 
 Here's a sentence with a footnote. [^1]  
 
@@ -35,7 +35,7 @@ Here's a sentence with a footnote. [^1]
 | Syntax      | Description | Test Text     |
 | :---        |    :----:   |          ---: |
 | Header      | Title       | Here's this   |
-| Paragraph   | Text        | And more      | 
+| Paragraph   | Text        | And more      |
 
 term
-: definition  
+: definition
