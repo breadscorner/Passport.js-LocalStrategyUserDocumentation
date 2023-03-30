@@ -30,10 +30,16 @@ Now we have access to 2 important passport functions: passport.authenticate and 
 <!-- explain routes briefly and include a link for further reading -->
 
 1. Create Route
+Create login route
 
-2. Connect Route To Form
+2. Connect Route To Form. This uses passport.authenticate.
+
+3. Create logout route. This uses req.logout().
 
 Passport.authenticate explained
-<!--  -->
+<!-- Explain what we have created and how these routes work -->
+
+## Conclusion
+<!-- celebrate -->
 
 [Next Page: Troubleshooting](/trouble)
