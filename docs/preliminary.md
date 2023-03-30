@@ -7,6 +7,7 @@ Prior to
 <!-- Set up html page with the form that you will use -->
 
 ## Installation and Configuration
+<!-- add sessions to this page  line 76 -->
 
 ### Purpose Of These Installations
 
@@ -71,6 +72,8 @@ This form will contain the input boxes for the user.
 <!-- code block with the server information -->
 <!-- Note: for more advanced users separate your code blocks into an app.js and have your server code in a sep file -->
 <!-- provide explanation after code block -->
+
+<!-- add sessions here -->
 
 ## Starting Up Your Express Server
 

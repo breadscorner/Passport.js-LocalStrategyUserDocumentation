@@ -29,4 +29,14 @@
 
 ## array
 
+## object
+
+## serialize and deserialize
+
+## query
+
+## sessions
+
+## undefined
+
 <!-- use admonition to use the i for info pop up -->

@@ -2,6 +2,7 @@
 
 Writing for new FSWD students of the future.
 
-index.md
-preliminary
+Include process we went through to come up with this documentation.
 
+Read rubric.
+Created structure: names of pages.
