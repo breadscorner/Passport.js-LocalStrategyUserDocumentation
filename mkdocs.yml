@@ -6,7 +6,7 @@ nav:
   - Home: 'index.md'
   - Instructions:
     - Preliminary Setup: 'preliminary.md'
-    - Routes: 'routes.md'
     - Strategies: 'strategies.md'
+    - Routes: 'routes.md'
   - Troubleshooting: 'trouble.md'
   - Glossary: 'glossary.md'
