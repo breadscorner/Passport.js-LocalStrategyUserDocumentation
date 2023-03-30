@@ -61,6 +61,8 @@ This form will contain the input boxes for the user.
 <!-- needs input for username and password also a submit button -->
 <!-- can break down individual steps for form creation -->
 
+4. Create logout button.
+
 ### Creating The Javascript File
 
 1. Create a new javascript file inside your project folder.
