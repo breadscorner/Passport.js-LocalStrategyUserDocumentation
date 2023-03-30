@@ -1,11 +1,5 @@
 # Strategies
-<!-- Main Heading
-Brief overview
-Subheadings as necessary
-Graphics
-Sep blocks instruction steps
-Notes cautions and warnings as needed
-Conclusion -->
+
 ## Setting Up A Database
 
 For the purpose of this project we will be creating a fake db. However, you can read documentation on the implementation of a real database, such as mysql or mongodb. You can swap out the fake database for a real one by following the documentation for those languages and technologies.
@@ -28,7 +22,7 @@ Both of these functions will return the entire object(username and password) ass
 <!-- explanation of code block -->
 <!-- Note: if using another database you would code the functions differently but the logic would remain the same -->
 
-4. Export functions.
+4 Export functions.
 This will allow you to access your database by importing the functions that query the database.
 <!-- code block of the export and import codes -->
 
@@ -36,10 +30,14 @@ This will allow you to access your database by importing the functions that quer
 
 In this section you will be setting up passport so that you can use it in your app to authenticate users.
 
-1. Import passport library, local-passport strategy, functions you made for querying db in fake-db.js.
+1. Create a file called passport.js.
+In this file you will be configuring passport for usage.
+<!--  -->
+
+2. Import passport library, local-passport strategy, functions you made for querying db in fake-db.js.
 <!-- code block of the imports -->
 
-2. Create a variable that contains your local-strategy.
+3. Create a variable that contains your local-strategy.
 Telling localstrategy what you plan on authenticating, and telling it what you want it to do with the auth, which is taking the username and password and running it through your function and using it to query your fake db.
 
 <!-- code block displaying this step -->
@@ -50,11 +48,11 @@ The function will return a value that is either the user or undefined. This is u
 
 If the passport's login function is run, now passport will run the serializeUser function, which we will talk about now.
 
-3. Create serializeUser Function.
+4. Create serializeUser Function.
 This function stores the identifying logged in user id which in this case we have used username. This information is stored inside the sessions.
 <!-- code block of serializeUser -->
 
-4. Create deserializeUser Function.
+5. Create deserializeUser Function.
 In this function the information that the done function inside the serialize function takes, which is the user's username, is used in deserializeUser. We use a function(name of function) from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside a variable.
 <!-- code block of deserializeUser function -->
 
@@ -62,6 +60,16 @@ If the variable contains an object(username, password), we run done(null, user).
 
 If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.
 <!-- screenshot of console with message -->
+
+## Export Local Login
+
+You need to tell passport that you want to use local strategy and that you want to export passport so that it can be used in app.js. 
+
+1. Add Code To Export Module
+Add a line of code to the bottom of passport.js.
+ <!-- code block -->
+
+By running this you modify passport to use your local login strategy. As well you can now export your modified passport to app.js.
 
 ## Conclusion
 <!-- need to write -->

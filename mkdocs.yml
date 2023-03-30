@@ -2,6 +2,9 @@ site_name: 'Passport'
 
 # change document
 
+theme:
+  name: 'material'
+
 nav:
   - Home: 'index.md'
   - Instructions:
