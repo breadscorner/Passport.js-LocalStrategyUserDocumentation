@@ -18,10 +18,7 @@ Passport.js is a middleware for authentication tailored to node.js, designed to 
 For term 2 Full Stack Web Development students, Passport.js is a valuable resource that offers flexibility in terms of authentication as they learn to develop applications. By utilizing Passport.js, students can streamline the login process, allowing them to focus on learning additional skills in various programming languages, technologies, and so on.
 
 ## Requirements
-<!-- Tech, knowledge -->
-<!-- VSCode: can use any ide however we will be using vscode. -->
-<!-- Understanding of HTML, Javascript -->
-<!-- Bonus: Express, Express Sessions, CSS -->
+
 ### Languages & Technologies
 
 To learn Passport.js, users should have fundamental knowledge of certain languages and technologies, including:
@@ -42,7 +39,7 @@ Knowledge of additional languages and technologies would be beneficial. Some exa
 
 * Cascading Style Sheets (CSS)
 
->Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
+>NOTE: Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
 
 <!-- ### [Passport.js](https://www.passportjs.org/)
 

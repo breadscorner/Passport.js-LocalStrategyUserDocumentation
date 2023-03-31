@@ -12,6 +12,10 @@ The process of verifying the identity of a user or system entity attempting to a
 
 A structured collection of data that is stored and organized in a way that enables efficient retrieval and management of the data
 
+## Edge Cases
+
+An edge case is an uncommon or unexpected scenario that can cause errors or failures in a program. It can reveal vulnerabilities in a system or application and is important to consider during development and testing.
+
 ## Initialize
 
 The process of setting up and preparing a system, application, or module for use by configuring its initial state and variables
