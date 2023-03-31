@@ -24,9 +24,9 @@ This will contain the fake database of users and passwords that you can use to a
 
 ### 3.Create 2 Functions
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.For getting the user by the username or password.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* For getting the user by the username or password.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.For finding the user by the username.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* For finding the user by the username.
 
 Both of these functions will return the entire object(username and password) associated with the requested user.
 
@@ -40,7 +40,9 @@ Both of these functions will return the entire object(username and password) ass
     ```code example second function```
 <!-- explanation of code block -->
 
-!!! note "Note: if using another database you would code the functions differently but the logic would remain the same"
+???+ tip "External Databases"
+
+    If using another database you would code the functions differently but the logic would remain the same.
 
 ### 4.Export Functions
 

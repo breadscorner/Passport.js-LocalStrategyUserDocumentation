@@ -7,7 +7,11 @@
 
     !!! success
 
-???+ danger "Issue 2"
+???+ danger "Browser Not Loading On Localhost"
+
+    Check to see that you are using the correct port consistently throughout your application.
+
+    Make sure you have run your script command.
 
     !!! success
 

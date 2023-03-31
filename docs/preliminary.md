@@ -13,7 +13,7 @@ Prior to
 
 >Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.
 
-### Installation
+### 1.Installation
 
 1.Initialize npm using the command terminal by running the following command:
 
@@ -42,7 +42,7 @@ Running this command will install the libraries you need for the project. These 
 <!-- Why nodemon -->
 <!-- screenshot of package.json file -->
 
-## Setting Up Your Express Application
+## 2.Setting Up Your Express Application
 
 ### Why do you need this?
 
@@ -52,9 +52,9 @@ In this section we will teach you how top create your index.html file and app.js
 
 ### Create An HTML Form
 
-#### 1.Create an html file inside your project folder.
+#### 1.Create An HTML File
 
-This will be the file that contains your form.
+This will be the file that contains your form. This file must be inside your project folder.
 
 !!! note "Note: This file can be named whatever you would like however we will be referring to it as index.html"
 
@@ -94,26 +94,33 @@ This form will contain the input boxes for the user.
 !!! example "Example: "
 <!-- screenshot of the folder directory -->
 
-#### 2.Insert the following code:
+#### 2.Insert Code
+
+The code snippet we have provided below can be inserted into the file and will provide the foundation of your express application.
 
 !!! example "Example: Express Application Code"
-<!-- code block with express app -->
+
+The code block below will setup your server. This will be how your VSCode can send your code to the browser using localhost.
 
 !!! example "Example: Server Information Code"
-<!-- code block with the server information -->
 
-!!! Note: For more advanced users separate your code blocks into an app.js and have your server code in a separate file
-<!-- provide explanation after code block -->
+???+ tip "Advanced Users"
+
+    For more advanced users, separate your code blocks into an app.js file and have your server code in a separate file called server.js.
 
 <!-- add sessions here -->
 
-## Starting Up Your Express Server
+## 3.Starting Up Your Express Server
 
 ### Local Browser
 
 Here you will learn how to run your program locally using your localhost.
 
-#### 1.Open package.json and add a script to start express.
+#### 1.Script Command
+
+Find the script in your package.json file and that will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.
+
+!!! note "Note: Open package.json and add a script to start your express application"
 
 <!-- screenshot of the package.json with the start -->
 !!! example "Example: Package.JSON- Starter Script"
@@ -122,7 +129,7 @@ Here you will learn how to run your program locally using your localhost.
 
 #### 2.Run Script To Start Server
 
-!!! note "Note: Run the script in your command terminal to start the server."
+Run the script in your command terminal to start the server.
 
 You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.
 
@@ -133,9 +140,13 @@ You will now be able to see your program when you open localhost:8000. Localhost
 
 #### 3.Run Local Browser
 
-!!! note "Note: Run the URL localhost:8000 in your browser(We are using 8000 but you may choose your own as long as you use it throughout your entire application)"
+Run the URL localhost:8000 in your browser and you will see your application displayed.
 
-You will be able to see your html form.
+???+ question "Why Localhost:8000?"
+
+    We are using 8000 but you may choose your own as long as you use it throughout your entire application.
+
+Your HTML will be what is displayed in your browser window.
 
 !!! example "Example: Browser URL"
 <!-- screenshot of browser with inputs -->
