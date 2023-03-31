@@ -73,5 +73,6 @@ By running this you modify passport to use your local login strategy. As well yo
 
 ## Conclusion
 <!-- need to write -->
+!!! success
 
 [Next Page: Routes](/routes)

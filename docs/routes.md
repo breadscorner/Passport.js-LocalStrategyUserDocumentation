@@ -41,5 +41,6 @@ Passport.authenticate explained
 
 ## Conclusion
 <!-- celebrate -->
+!!! success
 
 [Next Page: Troubleshooting](/trouble)

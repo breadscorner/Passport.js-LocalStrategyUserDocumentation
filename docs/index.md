@@ -39,7 +39,8 @@ Knowledge of additional languages and technologies would be beneficial. Some exa
 
 * Cascading Style Sheets (CSS)
 
->NOTE: Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
+!!! warning
+    Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
 
 <!-- ### [Passport.js](https://www.passportjs.org/)
 

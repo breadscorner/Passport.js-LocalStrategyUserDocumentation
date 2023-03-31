@@ -1,24 +1,26 @@
 # Troubleshooting
 
 <!-- Min of 5 things that could go wrong and their solutions -->
-## Authentication not working.
+???+ danger "Authentication Not Working"
 
-### Check to see if you have initialized your passport with your strategy before implementing it into your routes. There are two versions of passport inside your project but only one will work. Make sure that you have imported the correct library.
+    Check to see if you have initialized your passport with your strategy before implementing it into your routes. There are two versions of passport inside your project but only one will work. Make sure that you have imported the correct library.  
 
-## issue 2
+!!! success
 
-### solution 2
+???+ danger "Issue 2"
 
-## issue 3
+!!! success
 
-### solution 3
+???+ danger "Issue 3"
 
-## issue 4
+!!! success
 
-### solution 4
+???+ danger "Issue 4"
 
-## issue 5
+!!! success
 
-### solution 5
+???+ danger "Issue 5"
+
+!!! success
 
 [Next Page: Glossary](/glossary)

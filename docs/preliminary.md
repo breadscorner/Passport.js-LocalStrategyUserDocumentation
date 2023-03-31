@@ -99,6 +99,8 @@ You will be able to see your html form.
 ## Conclusion
 
 By the end of this you will have successfully installed all software and setup the basics of your express app: index.html, app.js, and an updated script inside your package.json file.
+
+!!! success
 <!-- What success looks like at each step(Screenshots of terminal) -->
 
 [Next Page: Strategies](/strategies)
