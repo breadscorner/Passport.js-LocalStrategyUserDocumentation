@@ -39,7 +39,7 @@ Knowledge of additional languages and technologies would be beneficial. Some exa
 
 * Cascading Style Sheets (CSS)
 
-!!! warning
+???+ warning "Inexperienced Users"
     Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
 
 <!-- ### [Passport.js](https://www.passportjs.org/)
