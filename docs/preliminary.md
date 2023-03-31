@@ -17,7 +17,9 @@ Prior to
 
 1.Initialize npm using the command terminal by running the following command:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm init`
+!!! example "Command:"
+
+    `npm init`
 
 When using npm, it generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.
 
@@ -25,14 +27,15 @@ Next, install the libraries you will need to complete this project. These librar
 
 2.To install passport.js to your local VSCode, with npm, use the following command:
 <!-- Double check the code -->
-Windows:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`$ npm install passport passport-local express express-sessions nodemon`
+!!! example "Windows:"
+
+    `$ npm install passport passport-local express express-sessions nodemon`
 <!-- screenshot of terminal with the code -->
 
-MacOs:
+!!! example "MacOs:"
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install passport passport-local express express-sessions nodemon`
+    `npm install passport passport-local express express-sessions nodemon`
 <!-- screenshot of terminal with the code -->
 
 Running this command will install the libraries you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.
@@ -49,7 +52,8 @@ In this section we will teach you how top create your index.html file and app.js
 
 ### Create An HTML Form
 
-1.Create an html file inside your project folder.
+#### 1.Create an html file inside your project folder.
+
 This will be the file that contains your form.
 
 !!! note "Note: This file can be named whatever you would like however we will be referring to it as index.html"
@@ -57,7 +61,8 @@ This will be the file that contains your form.
 !!! example "Example: "
 <!-- screenshot of file directory -->
 
-2.Structure your html document.
+#### 2.Structure Your HTML Document
+
 This code allows the browser that runs this file to understand and interpret any code you write in this document.
 <!-- link to html documentation -->
 ???+ tip "Tip"
@@ -66,7 +71,8 @@ This code allows the browser that runs this file to understand and interpret any
 !!! example "Example: "
 <!-- screenshot of environment with forms -->
 
-3.Create an html form.
+#### 3.Create An HTML Form.
+
 This form will contain the input boxes for the user.
 
 !!! example "Example: HTML Form"
@@ -75,18 +81,20 @@ This form will contain the input boxes for the user.
 <!-- needs input for username and password also a submit button -->
 <!-- can break down individual steps for form creation -->
 
-4.Create logout button in the html form.
+#### 4.Create logout button in the html form.
 
 ### Creating The Javascript File
 
-1.Create a new javascript file inside your project folder.
+#### 1.Create A New Javascript File
+
+!!! note "Note: Must be inside your project folder"
 
 !!! note "Note: can be named whatever you would like however we will be referring to it as app.js"
 
 !!! example "Example: "
 <!-- screenshot of the folder directory -->
 
-2.Insert the following code:
+#### 2.Insert the following code:
 
 !!! example "Example: Express Application Code"
 <!-- code block with express app -->
@@ -101,16 +109,21 @@ This form will contain the input boxes for the user.
 
 ## Starting Up Your Express Server
 
+### Local Browser
+
 Here you will learn how to run your program locally using your localhost.
 
-1.Open package.json and add a script to start express.
+#### 1.Open package.json and add a script to start express.
 
 <!-- screenshot of the package.json with the start -->
 !!! example "Example: Package.JSON- Starter Script"
 <!-- include feedback statement explaining how the script works -->
   <!-- One statement that equals the whole command to run the project -->
 
-2.Run the script in your command terminal to start the server.
+#### 2.Run Script To Start Server
+
+!!! note "Note: Run the script in your command terminal to start the server."
+
 You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.
 
 !!! example "Example: Package.JSON- Port"
@@ -118,7 +131,10 @@ You will now be able to see your program when you open localhost:8000. Localhost
 
 !!! example "Example: Port Listener"
 
-3.Open your browser and use the url localhost:8000.
+#### 3.Run Local Browser
+
+!!! note "Note: Run the URL localhost:8000 in your browser(We are using 8000 but you may choose your own as long as you use it throughout your entire application)"
+
 You will be able to see your html form.
 
 !!! example "Example: Browser URL"
