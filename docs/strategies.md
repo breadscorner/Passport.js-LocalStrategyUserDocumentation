@@ -20,7 +20,7 @@ This will contain the fake database of users and passwords that you can use to a
 
 !!! example "Example: "
 
-```code example```
+    ```code example```
 
 ### 3.Create 2 Functions
 
@@ -32,12 +32,12 @@ Both of these functions will return the entire object(username and password) ass
 
 !!! example "Example: "
 
-```code example first function```
+    ```code example first function```
 <!-- explanation of code block -->
 
 !!! example "Example: "
 
-```code example second function```
+    ```code example second function```
 <!-- explanation of code block -->
 
 !!! note "Note: if using another database you would code the functions differently but the logic would remain the same"
@@ -48,7 +48,7 @@ This will allow you to access your database by importing the functions that quer
 
 !!! example "Example: "
 
-```code example export and import codes```
+    ```code example export and import codes```
 
 ## Setting Up Passport.js
 
@@ -60,7 +60,7 @@ In this file you will be configuring passport for usage.
 
 !!! example "Example: "
 
-```code example passport config```
+    ```code example passport config```
 
 ### 2.Import Libraries & Files
 
@@ -72,7 +72,7 @@ The libraries you will bring in will be:
 
 !!! example "Example: "
 
-```code example import codes```
+    ```code example import codes```
 
 ### 3.Create A Local-Strategy Variable
 
@@ -80,7 +80,7 @@ To configure local strategy for authentication, you must specify the authenticat
 
 !!! example "Example: "
 
-```code example```
+    ```code example```
 <!-- explain the code below -->
 <!-- annotated code block with explanations on each line -->
 
@@ -94,7 +94,7 @@ This function stores the identifying logged in user id which in this case we hav
 
 !!! example "Example: "
 
-```code example serializeUser```
+    ```code example serializeUser```
 
 ### 5.Create deserializeUser Function
 
@@ -102,12 +102,13 @@ In this function the information that the done function inside the serialize fun
 
 !!! example "Example: "
 
-```code example deserializeUser```
+    ```code example deserializeUser```
 
 If the variable contains an object(username, password), we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.
 
 If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.
 
+!!! example
 <!-- screenshot of console with message -->
 
 ## Export Local Login
@@ -120,7 +121,7 @@ Add a line of code to the bottom of passport.js.
 
 !!! example "Example: "
 
-```code example```
+    ```code example```
 
 By running this you modify passport to use your local login strategy. As well you can now export your modified passport to app.js.
 
