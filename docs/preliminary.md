@@ -9,12 +9,15 @@ Prior to
 
 ## Installation and Configuration
 
-### Purpose Of These Installations
+>### Purpose Of npm Installation
 
-Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.
+>Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.
 
-1.Initialize NPM using the command terminal by running the following command:
-`npm init`
+### Installation
+
+1.Initialize npm using the command terminal by running the following command:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm init`
 
 When using npm, it generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.
 
@@ -24,12 +27,12 @@ Next, install the libraries you will need to complete this project. These librar
 <!-- Double check the code -->
 Windows:
 
-`$ npm install passport passport-local express express-sessions nodemon`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`$ npm install passport passport-local express express-sessions nodemon`
 <!-- screenshot of terminal with the code -->
 
 MacOs:
 
-`npm install passport passport-local express express-sessions nodemon`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`npm install passport passport-local express express-sessions nodemon`
 <!-- screenshot of terminal with the code -->
 
 Running this command will install the libraries you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.

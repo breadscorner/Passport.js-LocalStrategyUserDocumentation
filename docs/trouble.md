@@ -5,22 +5,22 @@
 
     Check to see if you have initialized your passport with your strategy before implementing it into your routes. There are two versions of passport inside your project but only one will work. Make sure that you have imported the correct library.  
 
-!!! success
+    !!! success
 
 ???+ danger "Issue 2"
 
-!!! success
+    !!! success
 
 ???+ danger "Issue 3"
 
-!!! success
+    !!! success
 
 ???+ danger "Issue 4"
 
-!!! success
+    !!! success
 
 ???+ danger "Issue 5"
 
-!!! success
+    !!! success
 
 [Next Page: Glossary](/glossary)

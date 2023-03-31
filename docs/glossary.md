@@ -28,9 +28,17 @@ A collection of pre-written code that can be reused by other software programs t
 
 A term used to refer to the local computer that a developer is working on, which is typically identified by the IP address 127.0.0.1
 
+## Middleware
+
+Middleware is software that connects different applications or systems and facilitates communication and data exchange between them. Middleware allows the user to use functions throughout the application development not just in one file.
+
 ## Module
 
 A self-contained block of code that performs a specific function and can be imported or exported to be used in other programs
+
+## Node.js
+
+Node.js is an open-source, cross-platform JavaScript runtime environment that allows developers to build scalable network applications.
 
 ## Nodemon
 

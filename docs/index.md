@@ -12,11 +12,11 @@ Conclusion -->
 
 ### Introducing Passport.js
 
-Passport.js is a middleware for authentication tailored to node.js, designed to offer various authentication strategies for your application. With its features, you can enable users to log in using social media accounts such as Facebook or Google, or through username and password. This middleware provides a convenient solution for developers who aim to implement authentication in their Express-based applications.
+[Passport.js](./glossary.md#passportjs) is a [middleware](./glossary.md#middleware) for [authentication](./glossary.md#authentication) tailored to [node.js](./glossary.md#nodejs), designed to offer various authentication strategies for your application. With its features, you can enable users to log in using social media accounts such as Facebook or Google, or through username and password. This middleware provides a convenient solution for developers who aim to implement authentication in their Express-based applications.
 
-### Benefits For Full Stack Students
+>### Benefits For Full Stack Students
 
-For term 2 Full Stack Web Development students, Passport.js is a valuable resource that offers flexibility in terms of authentication as they learn to develop applications. By utilizing Passport.js, students can streamline the login process, allowing them to focus on learning additional skills in various programming languages, technologies, and so on.
+>For term 2 Full Stack Web Development students, Passport.js is a valuable resource that offers flexibility in terms of authentication as they learn to develop applications. By utilizing Passport.js, students can streamline the login process, allowing them to focus on learning additional skills in various programming languages, technologies, and so on.
 
 ## Requirements
 
@@ -35,13 +35,16 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
     * Creating files
     * Running code on your local browser
 
-Knowledge of additional languages and technologies would be beneficial. Some examples are:
 
-* Express
+???+ tip "Bonus Knowledge"
 
-* Express Sessions
+    Knowledge of additional languages and technologies would be beneficial. Some examples are:
 
-* Cascading Style Sheets (CSS)
+    * Express
+
+    * Express Sessions
+
+    * Cascading Style Sheets (CSS)
 
 ???+ warning "Inexperienced Users"
     Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
