@@ -1,13 +1,13 @@
 # Preliminary Setup
 
-## What You Are Doing
+## Purpose Of Passport.js
+
 Prior to
 <!-- Brief intro to describe what you will do in this section -->
 <!-- Installing libraries, setting up your express app -->
 <!-- Set up html page with the form that you will use -->
 
 ## Installation and Configuration
-<!-- add sessions to this page  line 76 -->
 
 ### Purpose Of These Installations
 
