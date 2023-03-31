@@ -9,6 +9,7 @@ Conclusion -->
 
 ## Introduction to Local Strategy
 <!-- What is passport.js -->
+
 ### Introducing Passport.js
 
 Passport.js is a middleware for authentication tailored to node.js, designed to offer various authentication strategies for your application. With its features, you can enable users to log in using social media accounts such as Facebook or Google, or through username and password. This middleware provides a convenient solution for developers who aim to implement authentication in their Express-based applications.
@@ -30,6 +31,9 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
 * Integrated Development Environment (IDE)
 
   * Visual Studio Code (VSCode) is recommended
+
+    * Creating files
+    * Running code on your local browser
 
 Knowledge of additional languages and technologies would be beneficial. Some examples are:
 

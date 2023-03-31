@@ -77,7 +77,9 @@ This form will contain the input boxes for the user.
 ### Creating The Javascript File
 
 1.Create a new javascript file inside your project folder.
+
 !!! note "Note: can be named whatever you would like however we will be referring to it as app.js"
+
 !!! example "Example: "
 <!-- screenshot of the folder directory -->
 

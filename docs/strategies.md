@@ -17,25 +17,38 @@ Inside this file we will create an array containing objects. Each objects contai
 Inside the inside the fake-db.js you will create a variable.
 
 This will contain the fake database of users and passwords that you can use to access the program.
-<!-- screenshot of the code block -->
+
+!!! example "Example: "
+
+```code example```
 
 ### 3.Create 2 Functions
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.For getting the user by the username or password.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.For finding the user by the username
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.For finding the user by the username.
 
 Both of these functions will return the entire object(username and password) associated with the requested user.
-<!-- code block for first function -->
+
+!!! example "Example: "
+
+```code example first function```
 <!-- explanation of code block -->
-<!-- code block for second function -->
+
+!!! example "Example: "
+
+```code example second function```
 <!-- explanation of code block -->
-<!-- Note: if using another database you would code the functions differently but the logic would remain the same -->
+
+!!! note "Note: if using another database you would code the functions differently but the logic would remain the same"
 
 ### 4.Export Functions
 
 This will allow you to access your database by importing the functions that query the database.
-<!-- code block of the export and import codes -->
+
+!!! example "Example: "
+
+```code example export and import codes```
 
 ## Setting Up Passport.js
 
@@ -44,7 +57,10 @@ In this section you will be setting up passport so that you can use it in your a
 ### 1.Create A File Named Passport.js
 
 In this file you will be configuring passport for usage.
-<!--  -->
+
+!!! example "Example: "
+
+```code example passport config```
 
 ### 2.Import Libraries & Files
 
@@ -53,13 +69,18 @@ The libraries you will bring in will be:
 * Passport library
 * Local passport strategy
 * Functions you made for querying db in fake-db.js.
-<!-- code block of the imports -->
+
+!!! example "Example: "
+
+```code example import codes```
 
 ### 3.Create A Local-Strategy Variable
 
 To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process. This involves passing the username and password through a designated function and using the result to query a mock database.
 
-<!-- code block displaying this step -->
+!!! example "Example: "
+
+```code example```
 <!-- explain the code below -->
 <!-- annotated code block with explanations on each line -->
 
@@ -70,16 +91,23 @@ If the passport's login function is run, now passport will run the serializeUser
 ### 4.Create serializeUser Function
 
 This function stores the identifying logged in user id which in this case we have used username. This information is stored inside the sessions.
-<!-- code block of serializeUser -->
+
+!!! example "Example: "
+
+```code example serializeUser```
 
 ### 5.Create deserializeUser Function
 
 In this function the information that the done function inside the serialize function takes, which is the user's username, is used in deserializeUser. We use a function(name of function) from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside a variable.
-<!-- code block of deserializeUser function -->
+
+!!! example "Example: "
+
+```code example deserializeUser```
 
 If the variable contains an object(username, password), we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.
 
 If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.
+
 <!-- screenshot of console with message -->
 
 ## Export Local Login
@@ -89,7 +117,10 @@ You need to tell passport that you want to use local strategy and that you want 
 ### 1.Add Code To Export Module
 
 Add a line of code to the bottom of passport.js.
- <!-- code block -->
+
+!!! example "Example: "
+
+```code example```
 
 By running this you modify passport to use your local login strategy. As well you can now export your modified passport to app.js.
 
