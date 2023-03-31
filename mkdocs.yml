@@ -5,6 +5,8 @@ site_name: 'Passport'
 theme:
   name: 'material'
 
+htmltitle: 'Passport.js Local Strategy'
+
 nav:
   - Home: 'index.md'
   - Instructions:
