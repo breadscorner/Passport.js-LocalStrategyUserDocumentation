@@ -21,9 +21,9 @@ This will contain the fake database of users and passwords that you can use to a
 
 ### 3.Create 2 Functions
 
-1.For getting the user by the username or password.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.For getting the user by the username or password.
 
-2.For finding the user by the username
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.For finding the user by the username
 
 Both of these functions will return the entire object(username and password) associated with the requested user.
 <!-- code block for first function -->
