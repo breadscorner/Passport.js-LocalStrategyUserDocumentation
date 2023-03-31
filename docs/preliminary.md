@@ -106,14 +106,14 @@ Here you will learn how to run your program locally using your localhost.
   <!-- One statement that equals the whole command to run the project -->
 
 2.Run the script in your command terminal to start the server.
-You will now be able to see your program when you open localhost<num>. Localhost number is the port number declared in your app.js file.
+You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.
 
 !!! example "Example: Package.JSON- Port"
 <!-- screenshot of the port number in app.js -->
 
 !!! example "Example: Port Listener"
 
-3.Open your browser and use the url localhost:<num>.
+3.Open your browser and use the url localhost:8000.
 You will be able to see your html form.
 
 !!! example "Example: Browser URL"

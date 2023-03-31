@@ -10,7 +10,7 @@ markdown_extensions:
   - 'pymdownx.details'
   - 'pymdownx.superfences'
 
-htmltitle: 'Passport.js Local Strategy'
+htmltitle: 'Passport.js- Local Strategy'
 
 nav:
   - Home: 'index.md'
