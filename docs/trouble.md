@@ -15,7 +15,13 @@
 
     !!! success
 
-???+ danger "Issue 3"
+???+ danger "Local Strategy Not Getting Called"
+
+    If you are using the latest version, bodyParser() is deprecated. Try using bodyParser.urlencoded({extended:true}).
+
+    If this solution does not work for you review this thread from stack overflow with some other options: 
+
+    [Stack Overflow](https://stackoverflow.com/questions/18690354/passport-local-strategy-not-getting-called)
 
     !!! success
 

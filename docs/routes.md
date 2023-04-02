@@ -1,11 +1,8 @@
 # Routes
-<!-- Main Heading
-Brief overview
-Subheadings as necessary
-Graphics
-Sep blocks instruction steps
-Notes cautions and warnings as needed
-Conclusion -->
+
+## What Are Routes?
+
+In Passport.js, a route is a protected [endpoint](./glossary.md#endpoint) that requires authentication. Passport [middleware](./glossary.md#middleware) checks if the user is authenticated and redirects them to the login page or sends an error response if not. Each route is associated with an authentication strategy, like local or social authentication. Passport.js lets developers configure authentication strategies for each route to ensure only authenticated users access protected resources.
 
 ## Import From Passport.js
 
