@@ -2,10 +2,7 @@
 
 ## Purpose Of Passport.js
 
-Prior to
-<!-- Brief intro to describe what you will do in this section -->
-<!-- Installing libraries, setting up your express app -->
-<!-- Set up html page with the form that you will use -->
+Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local strategy.
 
 ## Installation and Configuration
 
