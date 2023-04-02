@@ -12,6 +12,8 @@ Conclusion -->
 
 ### Introducing Passport.js
 
+![Passport Logo](./images/passport%20logo2.png){ align=left }
+
 [Passport.js](./glossary.md#passportjs) is a [middleware](./glossary.md#middleware) for [authentication](./glossary.md#authentication) tailored to [node.js](./glossary.md#nodejs), designed to offer various authentication strategies for your application. With its features, you can enable users to log in using social media accounts such as Facebook or Google, or through username and password. This middleware provides a convenient solution for developers who aim to implement authentication in their Express-based applications.
 
 >### Benefits For Full Stack Students
