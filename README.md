@@ -6,5 +6,3 @@ Include process we went through to come up with this documentation.
 
 Read rubric.
 Created structure: names of pages.
-
-Alter Readme as a Test
