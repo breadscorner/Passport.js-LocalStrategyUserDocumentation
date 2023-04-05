@@ -18,26 +18,40 @@ Before the installation process, you need to decide on the authentication strate
 
     &nbsp;&nbsp;&nbsp;&nbsp;`npm init`
 
+Once your terminal finishes downloading. Hit enter to begin structuring your json file.
+
+You will be prompted in your terminal with a few questions. For the sake of this documentation we will hit enter until our terminal is once again displaying the file we are currently working in.
+
+???+ success "Screenshot: Terminal JSON File Creation"
+
+    ![JSON File Creation](./images/json-file-creation.png) 
+    ![JSON File Created](./images/json-complete.png) 
+
+???+ note "Updating JSON File"
+
+    You can change this information later on inside the package.json file.
+
 When using npm, it generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.
 
 Next, install the libraries you will need to complete this project. These libraries are passport, passport-local, express, express-sessions, and nodemon.
 
 2.To install passport.js to your local VSCode, with npm, use the following command:
-<!-- Double check the code -->
 
 !!! example "Windows:"
 
     &nbsp;&nbsp;&nbsp;&nbsp;`$ npm install passport passport-local express express-sessions nodemon`
-<!-- screenshot of terminal with the code -->
 
 !!! example "MacOs:"
 
     &nbsp;&nbsp;&nbsp;&nbsp;`npm install passport passport-local express express-sessions nodemon`
-<!-- screenshot of terminal with the code -->
 
-Running this command will install the libraries you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.
-<!-- Why nodemon -->
-<!-- screenshot of package.json file -->
+Running this command will install the [libraries](./glossary.md#library) you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.
+
+[Nodemon](./glossary.md#nodemon) facilitates fast Node.js app development by automatically restarting the application upon detecting changes in the project directory.
+
+???+ success "Screenshot: Successful Library Installation"
+
+    ![Library Installation](./images/library-install.png) 
 
 ## Setting Up Your Express Application
 
@@ -53,22 +67,51 @@ In this section we will teach you how top create your index.html file and app.js
 
 This will be the file that contains your form. This file must be inside your project folder.
 
-!!! note "Note: This file can be named whatever you would like however we will be referring to it as index.html"
+???+ note "Naming Your File"
 
-!!! example "Example: "
-<!-- screenshot of file directory -->
+    This file can be named whatever you would like however we will be referring to it as index.html
+
+???+ success "Screenshot: HTML File Creation"
+
+    ![HTML File Creation](./images/html-file-creation.png) 
 
 #### 2.Structure Your HTML Document
 
-This code allows the browser that runs this file to understand and interpret any code you write in this document.
-<!-- link to html documentation -->
+This HTML starter code allows the browser that runs this file to understand and interpret any code you write in this document.
+
+???+ note "Understanding HTML Basics"
+
+    Make sure you understand the topic of HTML file structures before proceeding.
+
+    We have provided you with some helpful documentation below:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
+
+Copy and paste the code below or look at the tip for a shortcut.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
 ???+ tip "Setting Your HTML Template"
+
     There is a VSCode shortcut that will set your template.
 
-    ++exclam+enter++
+    &nbsp;&nbsp;&nbsp;&nbsp;++exclam+enter++
 
-!!! example "Example: "
-<!-- screenshot of environment with forms -->
+???+ success "Screenshot: HTML Document Template"
+
+      ![HTML File Setup](./images/html-file-setup.png) 
 
 #### 3.Create An HTML Form
 
@@ -84,6 +127,24 @@ This form will contain the input boxes for the user.
 
 In the html form add a logout button.
 
+???+ note "Logout Button"
+
+    There are 4 important steps to create a functional logout button.
+
+    &nbsp;&nbsp;&nbsp;&nbsp;1.Reference the logout button.
+
+    &nbsp;&nbsp;&nbsp;&nbsp;2.Enable the button for logged in users.
+
+    &nbsp;&nbsp;&nbsp;&nbsp;3.Create the logout function.
+
+    &nbsp;&nbsp;&nbsp;&nbsp;4.Create an event listener for the button to work when clicked on.
+
+    If you are not familiar with logout buttons revisit the topic and then return here.
+
+    Here is a helpful resource on the topic of logout buttons:
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[Logout Buttons](https://userfront.com/guide/build-logout-button-html)
+
 ### Create The Javascript File
 
 #### 1.Create A New Javascript File
@@ -96,8 +157,9 @@ In the html form add a logout button.
 
     This file can be named whatever you would like however we will be referring to it as app.js.
 
-???+ example "Example: "
-<!-- screenshot of the folder directory -->
+???+ success "Screenshot: Javascript File Created"
+
+    ![JS File Create](./images/js-file-creation.png)
 
 #### 2.Insert Code
 
