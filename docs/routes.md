@@ -106,6 +106,7 @@ If the variable contains false, we will run done(null, false, {message: "Your lo
 
 ## Conclusion
 <!-- celebrate -->
+By the end of this, you will have created an Express website that authenticates users using your own modified version of the passport.js library, before storing the user's data in as a session using the express-session library. To see if your passport.authenticate was successful or not, you can inspect the webpage, go to the Storage tab, and then go click on LocalStorage. If there is a session stored there, then that means your passport.authenticate() and passport.serializeUser() were successful.
 !!! success
 
 [Next Page: Troubleshooting](/trouble)
