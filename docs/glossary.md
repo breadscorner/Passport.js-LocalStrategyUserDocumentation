@@ -98,6 +98,10 @@ A value in programming that indicates the absence of a defined value or variable
 
 If you would like to learn more about passport or other strategies check out the following web pages.
 
-[Passport.js](https://www.passportjs.org/)
+| Learn More |
+|:---------:|
+|[Passport.js](https://www.passportjs.org/)|
+
+
 
 <!-- use admonition to use the i for info pop up -->

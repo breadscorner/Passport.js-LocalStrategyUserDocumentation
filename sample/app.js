@@ -4,18 +4,18 @@ const session = require("express-session")
 const path = require("path");
 const passport = require("./passport");
 
-const port = process.env.port || 4000;
+const port = process.env.port || 8000;
 
 const app = express();
-
-//app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    // cookie: { secure: true }
+    // To run this on localhost you must keep this commented out.
+    // For any user(s) planning on using this for an application using https, uncomment the cookie line of code above.
 }))
 app.use(passport.initialize())
 app.use(passport.session())

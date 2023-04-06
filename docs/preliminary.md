@@ -4,11 +4,27 @@
 
 Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local [strategy](./glossary.md#strategies).
 
+## Create A Project Folder
+
+### 1.Project Folder Creation
+
+The first thing you will need to do is create a folder for all of the files in this project. Choose a place in your computer that you would like to save your project. Create the folder.
+
+### 2.Ensure Correct Folder In Your VSCode Terminal
+
+In your VSCode terminal, navigate your way to the project folder you created.
+
+Type cd ~ to navigate to your root folder
+
+<!-- add info navigating to project folder -->
+<!-- ensure that your command terminal in vscode is in the right folder -->
+
 ## Installation and Configuration
 
 >### Purpose Of NPM Installation
 >
 >Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.
+<!-- Add why we start with npm init here -->
 
 ### 1.Installing NPM
 
@@ -27,7 +43,7 @@ You will be prompted in your terminal with a few questions. For the sake of this
     ![JSON File Creation](./images/json-file-creation.png) 
 
     We are using a folder called passport-example.
-    
+
     ![JSON File Created](./images/json-complete.png) 
 
 ???+ note "Updating JSON File"
@@ -92,24 +108,24 @@ This HTML starter code allows the browser that runs this file to understand and 
 
     &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
 
-Copy and paste the code below or look at the tip for a shortcut.
+Copy and paste the code below or look at the tip below for a shortcut.
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  </head>
-  <body>
-    // Insert form here later
-  </body>
-</html>
-```
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+      </head>
+      <body>
+        // Insert form here later
+      </body>
+    </html>
+    ```
 
-???+ tip "Setting Your HTML Template"
+???+ tip "Tip: Setting Your HTML Template"
 
     There is a VSCode shortcut that will set your template.
 
@@ -125,20 +141,20 @@ This form will contain the input boxes for the user. inside the body portion of 
 
 You can copy and paste this html form into the stated part of the body in your html file.
 
-```html
+    ```html
 
-  <form method="post" action="/login">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="password">Password:</label><br>
-    <input type="text" id="password" name="password"><br><br>
-    <input type="submit" value="Log In">
-  </form>
-  <form method="get" action="/logout">
-      <input type="submit" value="Log Out">
-  </form>
+      <form method="post" action="/login">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password"><br><br>
+        <input type="submit" value="Log In">
+      </form>
+      <form method="get" action="/logout">
+          <input type="submit" value="Log Out">
+      </form>
 
-```
+    ```
 
 ???+ note "Advanced Users"
 
@@ -202,21 +218,65 @@ We need to create a Javascript file to add all of the routes and functionality o
 
 #### 2.Insert Code
 
-The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application.
+The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application. This includes your server setup.
 
-???+ example "Example: Express Application Code"
+???+ example "Code: Express Application & Server Code"
 
-    ```javascript
+    ```js
+      const express = require("express");
+      const bodyParser = require("body-parser")
+      const session = require("express-session")
+      const path = require("path");
+      const passport = require("./passport");
+
+      const port = process.env.port || 8000;
+
+      const app = express();
+
+      app.use(bodyParser.urlencoded({ extended: false }));
+      app.use(session({
+          secret: 'keyboard cat',
+          resave: false,
+          saveUninitialized: true,
+          // cookie: { secure: true }
+          // To run this on localhost you must keep this commented out.
+          // For any user(s) planning on using this for an application using https, uncomment the cookie line of code above.
+      }))
+
+      // app.use(passport.initialize())
+      // app.use(passport.session())
+
+      app.get("/", (req, res) => {
+          res.sendFile(path.join(__dirname, '/index.html'));
+      })
+
+      app.get("/fail", (req, res) => {
+          console.log(req.session.messages);
+          res.send("Failure to Log In.");
+      })
+
+      // app.post("/login", passport.authenticate("local", {
+      //     successRedirect: "/",
+      //     failureRedirect: "/fail",
+      //     failureMessage: true
+      // }))
+
+      // app.get("/logout", (req, res) => {
+      //     req.logout((err) => {
+      //         if(err) {
+      //             console.log(err);
+      //         }
+      //     })
+      //     res.redirect("/");
+      // })
+
+      app.listen(port, () => {
+          console.log(`Server has started on port ${port}`);
+      });
 
     ```
 
-The code block below will setup your server. This will be how your VSCode can send your code to the browser using localhost.
-
-???+ example "Example: Server Information Code"
-
-    ```javascript
-
-    ```
+This will be how your VSCode can send your application to the browser when localhost:8000 is running.
 
 ???+ tip "Advanced Users"
 
@@ -234,7 +294,9 @@ Here you will learn how to run your program locally using your localhost.
 
 Find the script in your package.json file and that will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.
 
-!!! note "Note: Open package.json and add a script to start your express application"
+Initially, a script will be provided from the installation of libraries. Change this to nodemon app.js. Now you will be able to run this command in your VSCode terminal to launch the project in your local browser.
+
+!!! note "Note: Open package.json and add change script to start your express application"
 
 ???+ example "Screenshot: Package.JSON- Starter Script"
 
@@ -258,6 +320,8 @@ You will now be able to see your program when you open localhost:8000. Localhost
 
 #### 3.Run Local Browser
 
+Currently, we have all of the passport.js code commented out. This is because we have not yet set up passport configuration, a database(Including methods), or the routes.
+
 Run the URL localhost:8000 in your browser and you will see your application displayed.
 
 ???+ question "Why Localhost:8000?"
@@ -266,7 +330,9 @@ Run the URL localhost:8000 in your browser and you will see your application dis
 
 Your HTML will be what is displayed in your browser window.
 
-???+ example "Example: Browser URL & Form"
+???+ success "Screenshot: Browser URL & Form"
+
+    [Login Form]()
 <!-- screenshot of browser with inputs -->
 
 ## Conclusion

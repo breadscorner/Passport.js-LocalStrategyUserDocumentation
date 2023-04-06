@@ -74,21 +74,28 @@ The libraries you will bring in will be:
 
 !!! example "Example: "
 
-    ```code example import codes```
+    ```js
+    code example import codes
+    ```
 
 ### 3.Create A Local-Strategy Variable
 
-To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process. This involves passing the username and password through a designated function and using the result to query a mock database.
+To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process.
+
+* This involves passing the username and password through a designated function and using the result to query a mock database.
 
 !!! example "Example: "
 
-    ```code example```
+    ```js
+    code example
+    ```
 <!-- explain the code below -->
 <!-- annotated code block with explanations on each line -->
 
+<!-- Make more concise -->
 The function will return a value that is either the user or undefined. This is used as the condition inside an if-statement. If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done to run passport's login function. If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done NOT to run passport's login function. Instead, it sends whatever message is inside the message.
 
-If the passport's login function is run, now passport will run the serializeUser function, which we will talk about now.
+If the passport's login function is run, passport will run the serializeUser function.
 
 ### 4.Create serializeUser Function
 
