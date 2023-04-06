@@ -2,7 +2,7 @@
 
 ## Purpose Of Passport.js
 
-Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local strategy.
+Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local [strategy](./glossary.md#strategies).
 
 ## Installation and Configuration
 
@@ -25,6 +25,9 @@ You will be prompted in your terminal with a few questions. For the sake of this
 ???+ success "Screenshot: Terminal JSON File Creation"
 
     ![JSON File Creation](./images/json-file-creation.png) 
+
+    We are using a folder called passport-example.
+    
     ![JSON File Created](./images/json-complete.png) 
 
 ???+ note "Updating JSON File"
@@ -53,13 +56,15 @@ Running this command will install the [libraries](./glossary.md#library) you nee
 
     ![Library Installation](./images/library-install.png) 
 
+These errors and warnings do not affect your ability to work with these libraries.
+
 ## Setting Up Your Express Application
 
 >### Purpose Of Express
 >
 >To integrate Passport.js into your project, it's necessary to establish an express application first, as Passport.js is tailored exclusively for express applications. Trying to implement passport.js without using express will create a number of edge cases that may cause issues with your program running successfully.
 
-In this section we will teach you how top create your index.html file and app.js file.
+In this section we will teach you how top create your index.html file and app.js file. The html file will hold your login form. The javascript file will be home to all of the functionality.
 
 ### Create An HTML Form
 
@@ -99,6 +104,7 @@ Copy and paste the code below or look at the tip for a shortcut.
     <title>Document</title>
   </head>
   <body>
+    // Insert form here later
   </body>
 </html>
 ```
@@ -115,17 +121,46 @@ Copy and paste the code below or look at the tip for a shortcut.
 
 #### 3.Create An HTML Form
 
-This form will contain the input boxes for the user.
+This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.
 
-!!! example "Example: HTML Form"
-<!-- screenshot of form -->
+You can copy and paste this html form into the stated part of the body in your html file.
 
-<!-- needs input for username and password also a submit button -->
-<!-- can break down individual steps for form creation -->
+```html
 
-#### 4.Create Logout Button
+  <form method="post" action="/login">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="text" id="password" name="password"><br><br>
+    <input type="submit" value="Log In">
+  </form>
+  <form method="get" action="/logout">
+      <input type="submit" value="Log Out">
+  </form>
 
-In the html form add a logout button.
+```
+
+???+ note "Advanced Users"
+
+    You can customize your form later but for this demonstration we will be covering the basics.
+
+    Some features you may consider are:
+
+    * Hide the logout button while users are not logged in and hide the login while users are logged in.
+
+    * CSS and designing an aesthetically appealing form.
+
+!!! example "Screenshot: HTML Form"
+
+    Your html file should now look like this.
+
+    ![HTML Form Setup](./images/html-form.png)
+
+You will need to create a route for the login but we will explain more about that on the next page.
+
+#### 4.Create Login/Logout Button
+
+In the html form we have included a logout button. For functionality you will need to create a route for each. We will discuss this on the next page. Just understand that your buttons will not work for now.
 
 ???+ note "Logout Button"
 
@@ -149,9 +184,11 @@ In the html form add a logout button.
 
 #### 1.Create A New Javascript File
 
-!!! note "File Location"
+We need to create a Javascript file to add all of the routes and functionality of the login. Without this we would only be able to see the html form but not use it.
 
-    This file must be inside your project folder.
+!!! warning "File Location"
+
+    This file must be inside your project folder. If it is not within the correct folders your routes may not work.
 
 ???+ tip "Naming Your File"
 
@@ -159,23 +196,33 @@ In the html form add a logout button.
 
 ???+ success "Screenshot: Javascript File Created"
 
-    ![JS File Create](./images/js-file-creation.png)
+    Your file tabs should look similar to this.
+
+    ![JS File Create](./images/js-file-create.png)
 
 #### 2.Insert Code
 
-The code snippet we have provided below can be inserted into the file and will provide the foundation of your express application.
+The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application.
 
 ???+ example "Example: Express Application Code"
+
+    ```javascript
+
+    ```
 
 The code block below will setup your server. This will be how your VSCode can send your code to the browser using localhost.
 
 ???+ example "Example: Server Information Code"
 
+    ```javascript
+
+    ```
+
 ???+ tip "Advanced Users"
 
     For more advanced users, separate your code blocks into an app.js file and have your server code in a separate file called server.js.
 
-<!-- add sessions here -->
+    This will make for cleaner code but for now we will keep our instructions lean.
 
 ## Starting Up Your Express Server
 
@@ -189,19 +236,23 @@ Find the script in your package.json file and that will be how you command the t
 
 !!! note "Note: Open package.json and add a script to start your express application"
 
-<!-- screenshot of the package.json with the start -->
-???+ example "Example: Package.JSON- Starter Script"
-<!-- include feedback statement explaining how the script works -->
-  <!-- One statement that equals the whole command to run the project -->
+???+ example "Screenshot: Package.JSON- Starter Script"
+
+    ![Script](./images/script-dev.png)  
+
+As you can see we have added a comma and then some code into the package.json. Copy and paste this code into your package.json script(Remember to put a comma after the test).
 
 #### 2.Run Script To Start Server
 
-Run the script in your command terminal to start the server.
+Remember when we installed nodemon? This is why we installed it. When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.
+
+Now, run the script in your command terminal to start the server.
 
 You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.
 
-???+ example "Example: Package.JSON- Port"
-<!-- screenshot of the port number in app.js -->
+???+ example "Screenshot: Port URL"
+
+    ![Localhost:8000](./images/8000.png)  
 
 ???+ example "Example: Port Listener"
 
@@ -215,14 +266,15 @@ Run the URL localhost:8000 in your browser and you will see your application dis
 
 Your HTML will be what is displayed in your browser window.
 
-???+ example "Example: Browser URL"
+???+ example "Example: Browser URL & Form"
 <!-- screenshot of browser with inputs -->
 
 ## Conclusion
 
 By the end of this you will have successfully installed all software and setup the basics of your express app: index.html, app.js, and an updated script inside your package.json file.
 
-!!! success
-<!-- What success looks like at each step(Screenshots of terminal) -->
+!!! success "Congratulations"
+
+    You have successfully completed your preliminary setup for implementing passport.js.
 
 [Next Page: Strategies](/strategies)

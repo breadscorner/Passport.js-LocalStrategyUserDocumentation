@@ -18,14 +18,17 @@
 To learn Passport.js, users should have fundamental knowledge of certain languages and technologies, including:
 
 * HTML
+    * Creating forms
+    * Creating buttons
 
 * Javascript
+    * Event listeners
+    * Adding functionality to forms
 
 * Express
+    * Setting up an express application
 
-* Integrated Development Environment (IDE)
-
-  * Visual Studio Code (VSCode) is recommended
+* Visual Studio Code (VSCode)
 
     * Creating files
     * Running code on your local browser
@@ -39,6 +42,19 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
     * Cascading Style Sheets (CSS)
 
 ???+ warning "Inexperienced Users"
+
     Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
+
+???+ tip "Review Documentation"
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[HTML Forms](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[Javascript](https://www.w3schools.com/js/)
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[Javascript Event Listeners](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+
+    &nbsp;&nbsp;&nbsp;&nbsp;[Express](https://expressjs.com/)
 
 [Next Page: Preliminary Setup](/preliminary)
