@@ -1,0 +1,1027 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../strategies/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Preliminary Setup - Passport | Local Strategy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#preliminary-setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Passport | Local Strategy" class="md-header__button md-logo" aria-label="Passport | Local Strategy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Passport | Local Strategy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preliminary Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_3" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_3">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Passport | Local Strategy" class="md-nav__button md-logo" aria-label="Passport | Local Strategy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Passport | Local Strategy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Preliminary Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Preliminary Setup
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-of-passportjs" class="md-nav__link">
+    Purpose Of Passport.js
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-configuration" class="md-nav__link">
+    Installation and Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-npm-installation" class="md-nav__link">
+    Purpose Of NPM Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1installing-npm" class="md-nav__link">
+    1.Installing NPM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-express-application" class="md-nav__link">
+    Setting Up Your Express Application
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Your Express Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-express" class="md-nav__link">
+    Purpose Of Express
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-html-form" class="md-nav__link">
+    Create An HTML Form
+  </a>
+  
+    <nav class="md-nav" aria-label="Create An HTML Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1create-an-html-file" class="md-nav__link">
+    1.Create An HTML File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2structure-your-html-document" class="md-nav__link">
+    2.Structure Your HTML Document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3create-an-html-form" class="md-nav__link">
+    3.Create An HTML Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4create-loginlogout-button" class="md-nav__link">
+    4.Create Login/Logout Button
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-javascript-file" class="md-nav__link">
+    Create The Javascript File
+  </a>
+  
+    <nav class="md-nav" aria-label="Create The Javascript File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1create-a-new-javascript-file" class="md-nav__link">
+    1.Create A New Javascript File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2insert-code" class="md-nav__link">
+    2.Insert Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-up-your-express-server" class="md-nav__link">
+    Starting Up Your Express Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting Up Your Express Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-browser" class="md-nav__link">
+    Local Browser
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1script-command" class="md-nav__link">
+    1.Script Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2run-script-to-start-server" class="md-nav__link">
+    2.Run Script To Start Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3run-local-browser" class="md-nav__link">
+    3.Run Local Browser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strategies/" class="md-nav__link">
+        Strategies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../routes/" class="md-nav__link">
+        Routes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trouble/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-of-passportjs" class="md-nav__link">
+    Purpose Of Passport.js
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-and-configuration" class="md-nav__link">
+    Installation and Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation and Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-npm-installation" class="md-nav__link">
+    Purpose Of NPM Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1installing-npm" class="md-nav__link">
+    1.Installing NPM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-your-express-application" class="md-nav__link">
+    Setting Up Your Express Application
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Your Express Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-express" class="md-nav__link">
+    Purpose Of Express
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-html-form" class="md-nav__link">
+    Create An HTML Form
+  </a>
+  
+    <nav class="md-nav" aria-label="Create An HTML Form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1create-an-html-file" class="md-nav__link">
+    1.Create An HTML File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2structure-your-html-document" class="md-nav__link">
+    2.Structure Your HTML Document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3create-an-html-form" class="md-nav__link">
+    3.Create An HTML Form
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4create-loginlogout-button" class="md-nav__link">
+    4.Create Login/Logout Button
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-javascript-file" class="md-nav__link">
+    Create The Javascript File
+  </a>
+  
+    <nav class="md-nav" aria-label="Create The Javascript File">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1create-a-new-javascript-file" class="md-nav__link">
+    1.Create A New Javascript File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2insert-code" class="md-nav__link">
+    2.Insert Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-up-your-express-server" class="md-nav__link">
+    Starting Up Your Express Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting Up Your Express Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-browser" class="md-nav__link">
+    Local Browser
+  </a>
+  
+    <nav class="md-nav" aria-label="Local Browser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1script-command" class="md-nav__link">
+    1.Script Command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2run-script-to-start-server" class="md-nav__link">
+    2.Run Script To Start Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3run-local-browser" class="md-nav__link">
+    3.Run Local Browser
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="preliminary-setup">Preliminary Setup</h1>
+<h2 id="purpose-of-passportjs">Purpose Of Passport.js</h2>
+<p>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local <a href="../glossary/#strategies">strategy</a>.</p>
+<h2 id="installation-and-configuration">Installation and Configuration</h2>
+<blockquote>
+<h3 id="purpose-of-npm-installation">Purpose Of NPM Installation</h3>
+<p>Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.</p>
+</blockquote>
+<h3 id="1installing-npm">1.Installing NPM</h3>
+<p>1.Initialize npm using the command terminal by running the following command:</p>
+<div class="admonition example">
+<p class="admonition-title">Command:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>npm init</code></p>
+</div>
+<p>Once your terminal finishes downloading. Hit enter to begin structuring your json file.</p>
+<p>You will be prompted in your terminal with a few questions. For the sake of this documentation we will hit enter until our terminal is once again displaying the file we are currently working in.</p>
+<details class="success" open="open">
+<summary>Screenshot: Terminal JSON File Creation</summary>
+<p><img alt="JSON File Creation" src="../images/json-file-creation.png" /> </p>
+<p>We are using a folder called passport-example.</p>
+<p><img alt="JSON File Created" src="../images/json-complete.png" /> </p>
+</details>
+<details class="note" open="open">
+<summary>Updating JSON File</summary>
+<p>You can change this information later on inside the package.json file.</p>
+</details>
+<p>When using npm, it generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.</p>
+<p>Next, install the libraries you will need to complete this project. These libraries are passport, passport-local, express, express-sessions, and nodemon.</p>
+<p>2.To install passport.js to your local VSCode, with npm, use the following command:</p>
+<div class="admonition example">
+<p class="admonition-title">Windows:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>$ npm install passport passport-local express express-sessions nodemon</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">MacOs:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>npm install passport passport-local express express-sessions nodemon</code></p>
+</div>
+<p>Running this command will install the <a href="../glossary/#library">libraries</a> you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.</p>
+<p><a href="../glossary/#nodemon">Nodemon</a> facilitates fast Node.js app development by automatically restarting the application upon detecting changes in the project directory.</p>
+<details class="success" open="open">
+<summary>Screenshot: Successful Library Installation</summary>
+<p><img alt="Library Installation" src="../images/library-install.png" /> </p>
+</details>
+<p>These errors and warnings do not affect your ability to work with these libraries.</p>
+<h2 id="setting-up-your-express-application">Setting Up Your Express Application</h2>
+<blockquote>
+<h3 id="purpose-of-express">Purpose Of Express</h3>
+<p>To integrate Passport.js into your project, it's necessary to establish an express application first, as Passport.js is tailored exclusively for express applications. Trying to implement passport.js without using express will create a number of edge cases that may cause issues with your program running successfully.</p>
+</blockquote>
+<p>In this section we will teach you how top create your index.html file and app.js file. The html file will hold your login form. The javascript file will be home to all of the functionality.</p>
+<h3 id="create-an-html-form">Create An HTML Form</h3>
+<h4 id="1create-an-html-file">1.Create An HTML File</h4>
+<p>This will be the file that contains your form. This file must be inside your project folder.</p>
+<details class="note" open="open">
+<summary>Naming Your File</summary>
+<p>This file can be named whatever you would like however we will be referring to it as index.html</p>
+</details>
+<details class="success" open="open">
+<summary>Screenshot: HTML File Creation</summary>
+<p><img alt="HTML File Creation" src="../images/html-file-creation.png" /> </p>
+</details>
+<h4 id="2structure-your-html-document">2.Structure Your HTML Document</h4>
+<p>This HTML starter code allows the browser that runs this file to understand and interpret any code you write in this document.</p>
+<details class="note" open="open">
+<summary>Understanding HTML Basics</summary>
+<p>Make sure you understand the topic of HTML file structures before proceeding.</p>
+<p>We have provided you with some helpful documentation below:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/html/">HTML Documentation</a></p>
+</details>
+<p>Copy and paste the code below or look at the tip for a shortcut.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    // Insert form here later
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<details class="tip" open="open">
+<summary>Setting Your HTML Template</summary>
+<p>There is a VSCode shortcut that will set your template.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keys"><kbd class="key-exclam">!</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span></p>
+</details>
+<details class="success" open="open">
+<summary>Screenshot: HTML Document Template</summary>
+<p><img alt="HTML File Setup" src="../images/html-file-setup.png" /> </p>
+</details>
+<h4 id="3create-an-html-form">3.Create An HTML Form</h4>
+<p>This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.</p>
+<p>You can copy and paste this html form into the stated part of the body in your html file.</p>
+<div class="highlight"><pre><span></span><code>  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/login&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>Username:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;</span>Password:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log In&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/logout&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log Out&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<details class="note" open="open">
+<summary>Advanced Users</summary>
+<p>You can customize your form later but for this demonstration we will be covering the basics.</p>
+<p>Some features you may consider are:</p>
+<ul>
+<li>
+<p>Hide the logout button while users are not logged in and hide the login while users are logged in.</p>
+</li>
+<li>
+<p>CSS and designing an aesthetically appealing form.</p>
+</li>
+</ul>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Screenshot: HTML Form</p>
+<p>Your html file should now look like this.</p>
+<p><img alt="HTML Form Setup" src="../images/html-form.png" /></p>
+</div>
+<p>You will need to create a route for the login but we will explain more about that on the next page.</p>
+<h4 id="4create-loginlogout-button">4.Create Login/Logout Button</h4>
+<p>In the html form we have included a logout button. For functionality you will need to create a route for each. We will discuss this on the next page. Just understand that your buttons will not work for now.</p>
+<details class="note" open="open">
+<summary>Logout Button</summary>
+<p>There are 4 important steps to create a functional logout button.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1.Reference the logout button.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.Enable the button for logged in users.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.Create the logout function.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;4.Create an event listener for the button to work when clicked on.</p>
+<p>If you are not familiar with logout buttons revisit the topic and then return here.</p>
+<p>Here is a helpful resource on the topic of logout buttons:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://userfront.com/guide/build-logout-button-html">Logout Buttons</a></p>
+</details>
+<h3 id="create-the-javascript-file">Create The Javascript File</h3>
+<h4 id="1create-a-new-javascript-file">1.Create A New Javascript File</h4>
+<p>We need to create a Javascript file to add all of the routes and functionality of the login. Without this we would only be able to see the html form but not use it.</p>
+<div class="admonition warning">
+<p class="admonition-title">File Location</p>
+<p>This file must be inside your project folder. If it is not within the correct folders your routes may not work.</p>
+</div>
+<details class="tip" open="open">
+<summary>Naming Your File</summary>
+<p>This file can be named whatever you would like however we will be referring to it as app.js.</p>
+</details>
+<details class="success" open="open">
+<summary>Screenshot: Javascript File Created</summary>
+<p>Your file tabs should look similar to this.</p>
+<p><img alt="JS File Create" src="../images/js-file-create.png" /></p>
+</details>
+<h4 id="2insert-code">2.Insert Code</h4>
+<p>The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application.</p>
+<details class="example" open="open">
+<summary>Example: Express Application Code</summary>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</details>
+<p>The code block below will setup your server. This will be how your VSCode can send your code to the browser using localhost.</p>
+<details class="example" open="open">
+<summary>Example: Server Information Code</summary>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+</details>
+<details class="tip" open="open">
+<summary>Advanced Users</summary>
+<p>For more advanced users, separate your code blocks into an app.js file and have your server code in a separate file called server.js.</p>
+<p>This will make for cleaner code but for now we will keep our instructions lean.</p>
+</details>
+<h2 id="starting-up-your-express-server">Starting Up Your Express Server</h2>
+<h3 id="local-browser">Local Browser</h3>
+<p>Here you will learn how to run your program locally using your localhost.</p>
+<h4 id="1script-command">1.Script Command</h4>
+<p>Find the script in your package.json file and that will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.</p>
+<div class="admonition note">
+<p class="admonition-title">Note: Open package.json and add a script to start your express application</p>
+</div>
+<details class="example" open="open">
+<summary>Screenshot: Package.JSON- Starter Script</summary>
+<p><img alt="Script" src="../images/script-dev.png" />  </p>
+</details>
+<p>As you can see we have added a comma and then some code into the package.json. Copy and paste this code into your package.json script(Remember to put a comma after the test).</p>
+<h4 id="2run-script-to-start-server">2.Run Script To Start Server</h4>
+<p>Remember when we installed nodemon? This is why we installed it. When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.</p>
+<p>Now, run the script in your command terminal to start the server.</p>
+<p>You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.</p>
+<details class="example" open="open">
+<summary>Screenshot: Port URL</summary>
+<p><img alt="Localhost:8000" src="../images/8000.png" />  </p>
+</details>
+<details class="example" open="open">
+<summary>Example: Port Listener</summary>
+</details>
+<h4 id="3run-local-browser">3.Run Local Browser</h4>
+<p>Run the URL localhost:8000 in your browser and you will see your application displayed.</p>
+<details class="question" open="open">
+<summary>Why Localhost:8000?</summary>
+<p>We are using 8000 but you may choose your own as long as you use it throughout your entire application.</p>
+</details>
+<p>Your HTML will be what is displayed in your browser window.</p>
+<details class="example" open="open">
+<summary>Example: Browser URL &amp; Form</summary>
+</details>
+<!-- screenshot of browser with inputs -->
+
+<h2 id="conclusion">Conclusion</h2>
+<p>By the end of this you will have successfully installed all software and setup the basics of your express app: index.html, app.js, and an updated script inside your package.json file.</p>
+<div class="admonition success">
+<p class="admonition-title">Congratulations</p>
+<p>You have successfully completed your preliminary setup for implementing passport.js.</p>
+</div>
+<p><a href="/strategies">Next Page: Strategies</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+    
+  </body>
+</html>
