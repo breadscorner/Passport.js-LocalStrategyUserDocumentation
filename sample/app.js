@@ -4,7 +4,7 @@ const session = require("express-session")
 const path = require("path");
 const passport = require("./passport");
 
-const port = process.env.port || 4000;
+const port = process.env.port || 8000;
 
 const app = express();
 
@@ -15,12 +15,13 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }
+    //cookie: { secure: true }
 }))
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.get("/", (req, res) => {
+    console.log(req.user);
     res.sendFile(path.join(__dirname, '/index.html'));
 })
 

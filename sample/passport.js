@@ -16,10 +16,12 @@ const localStrategy = new LocalStrategy(
   );
   
   passport.serializeUser(function (user, done) {
+    console.log("Serializing");
     done(null, user.username);
   });
   
   passport.deserializeUser(function (username, done) {
+    console.log("deserializing");
     let user = getUserByUsername(username);
     if (user) {
       done(null, user);

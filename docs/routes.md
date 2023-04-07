@@ -6,6 +6,8 @@ In Passport.js, a route is a protected [endpoint](./glossary.md#endpoint) that r
 
 ## Import From Passport.js
 
+To start with importing your modified passport library, make sure that you are in your app.js file.
+
 ### 1. Require passport from passport.js.
 
 This imports our modified passport module, which contains our local login strategy.  
@@ -37,11 +39,11 @@ To read further on Express routes, [refer to this document](https://expressjs.co
 ```
 
 app.get("/", (req, res) => {
-    res.render("index")
+    res.sendFile(path.join(__dirname, '/index.html'));
 })
 ```
 
-By doing this, when users access your website's homepage, your app will recognize the route, and know to render the index.html file as a response, before finally sending it off to the user's browser. This is what allows users to see your website's homepage.
+By doing this, when users access your website's homepage, your app will recognize the route, and know to send the index.html file to the user's browser. This is what allows users to see your website's homepage.
 
 ### 2. Create a POST route for when the user clicks the button to submit the form
 
@@ -59,7 +61,7 @@ Here, rather than using app.get, we use app.post, because that is the method tha
 
 app.post("/login", passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/",
+    failureRedirect: "/fail",
     failureMessage: true,
 }))
 ```
@@ -81,7 +83,9 @@ Finally, failureMessage is set to "true", meaning that on a failure to validate 
 
 app.get("/logout", (req, res) => {
     req.logout((err) => {
-      console.log(err);
+        if(err) {
+            console.log(err);
+        }
     })
     res.redirect("/");
 })
