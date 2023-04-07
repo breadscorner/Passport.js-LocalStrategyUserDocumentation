@@ -232,4 +232,4 @@ On this page we learned about setting up the local strategy for passport.js. Mov
 
     You have successfully set up the local strategy, database, and functions to authenticate users.
 
-[Next Page: Routes](/routes)
+[Next Page: Routes](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/routes)

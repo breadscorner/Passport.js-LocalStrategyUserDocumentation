@@ -36,4 +36,4 @@
 
     Setting secure: true on the cookie in an Express application ensures that the cookie is only transmitted over a secure HTTPS connection. This prevents the cookie from being intercepted and stolen by attackers. It's necessary to ensure all cookies are transmitted over HTTPS when running an Express app on HTTPS.
 
-[Next Page: Glossary](/glossary)
+[Next Page: Glossary](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/glossary)

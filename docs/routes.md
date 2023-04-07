@@ -235,4 +235,4 @@ Now that you have completed these instructions you have the ability to:
 
     You have created an Express web application that authenticates its users using your own modified version of the passport.js library and stored the user's data in as a session using the express-session library.
 
-[Next Page: Troubleshooting](/trouble)
+[Next Page: Troubleshooting](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/trouble)

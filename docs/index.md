@@ -88,4 +88,4 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
 
     &nbsp;&nbsp;&nbsp;&nbsp;[Express](https://expressjs.com/)
 
-[Next Page: Preliminary Setup](/preliminary)
+[Next Page: Preliminary Setup](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/preliminary)
