@@ -2,13 +2,13 @@
 
 ??? danger "Authentication Not Working"
 
-    Check to see if you have initialized your passport with your strategy before implementing it into your routes. There are two versions of passport inside your project but only one will work. Make sure that you have imported the correct library.  
+    Check to see if you have initialized your passport with your strategy before implementing it into your routes. There are two versions of passport inside your project but only the one you have created and configured a strategy for will work. Make sure that you have imported the correct library.  
 
 ??? danger "Browser Not Loading On Localhost"
 
     Check to see that you are using the correct port consistently throughout your application.
 
-    Make sure you have run your script command.
+    Make sure you have run your script command. This will be 'npm run dev'.
 
 ??? danger "Local Strategy Not Getting Called"
 
@@ -20,7 +20,7 @@
 
 ??? danger "Login Button Does Not Redirect"
 
-    Double check that your route path match the path in the functions.
+    Double check that your route's path and method matches the path and method specified in the HTML form.
 
     For more information you may also like to refer to the following documentation:
 

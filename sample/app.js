@@ -13,10 +13,8 @@ app.use(session({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    // cookie: { secure: true }
-    // To run this on localhost you must keep this commented out.
-    // For any user(s) planning on using this for an application using https, uncomment the cookie line of code above.
 }))
+
 app.use(passport.initialize())
 app.use(passport.session())
 

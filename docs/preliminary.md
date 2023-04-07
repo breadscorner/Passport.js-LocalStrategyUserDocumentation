@@ -2,7 +2,7 @@
 
 ## Purpose Of Passport.js
 
->Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local [strategy](./glossary.md#strategies).
+>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local [strategy](./glossary.md#strategies), which is the authentication strategy for users that exist in your own database.
 
 ## Create A Project Folder
 
@@ -72,7 +72,7 @@ You will be prompted in your terminal with a few questions. For the sake of this
 
     You can change this information later on inside the package.json file.
 
-When using npm, it generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.
+When initializing npm, npm generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.
 
 Next, install the libraries you will need to complete this project. These libraries are passport, passport-local, express, express-sessions, and nodemon.
 
@@ -80,11 +80,11 @@ Next, install the libraries you will need to complete this project. These librar
 
 !!! example "Windows:"
 
-    &nbsp;&nbsp;&nbsp;&nbsp;`$ npm install passport passport-local express express-sessions nodemon`
+    &nbsp;&nbsp;&nbsp;&nbsp;`$ npm install passport passport-local express express-sessions nodemon body-parser`
 
 !!! example "MacOs:"
 
-    &nbsp;&nbsp;&nbsp;&nbsp;`npm install passport passport-local express express-sessions nodemon`
+    &nbsp;&nbsp;&nbsp;&nbsp;`npm install passport passport-local express express-sessions nodemon body-parser`
 
 Running this command will install the [libraries](./glossary.md#library) you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.
 
@@ -94,7 +94,7 @@ Running this command will install the [libraries](./glossary.md#library) you nee
 
     ![Library Installation](./images/library-install.png) 
 
-These errors and warnings do not affect your ability to work with these libraries.
+The errors and warnings in the above screenshot do not affect your ability to work with these libraries.
 
 ## Setting Up Your Express Application
 
@@ -102,7 +102,7 @@ These errors and warnings do not affect your ability to work with these librarie
 >
 >To integrate Passport.js into your project, it's necessary to establish an express application first, as Passport.js is tailored exclusively for express applications. Trying to implement passport.js without using express will create a number of edge cases that may cause issues with your program running successfully.
 
-In this section we will teach you how top create your index.html file and app.js file. The html file will hold your login form. The javascript file will be home to all of the functionality.
+In this section we will teach you how to create your index.html file and app.js file. The html file will hold your login form. The javascript file will be home to all of the functionality.
 
 ### Create An HTML Form
 
@@ -134,7 +134,7 @@ This HTML starter code allows the browser that runs this file to understand and 
 
     Copy and paste the code below or look at the tip below for a shortcut.
 
-        ```html
+    ```html
         <!DOCTYPE html>
         <html lang="en">
           <head>
@@ -147,11 +147,11 @@ This HTML starter code allows the browser that runs this file to understand and 
             // Insert form here later
           </body>
         </html>
-        ```
+    ```
 
 ??? tip "Tip: Setting Your HTML Template"
 
-    There is a VSCode shortcut that will set your template.
+    There is a VSCode shortcut that will set your template. When you are in your file, print a ! and press the Enter key.
 
     &nbsp;&nbsp;&nbsp;&nbsp;++exclam+enter++
 
@@ -161,7 +161,7 @@ This HTML starter code allows the browser that runs this file to understand and 
 
 #### 3.Create An HTML Form
 
-This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.
+This form will contain the input boxes for the user. Paste the below htmll code inside the body portion of your index.html file. It is a basic form that has a username and password as well as buttons for both logging in and logging out.
 
 !!! example "HTML Form"
 
@@ -186,9 +186,9 @@ This form will contain the input boxes for the user. inside the body portion of 
 
     Some features you may consider are:
 
-    * Hide the logout button while users are not logged in and hide the login while users are logged in.
+    * Hiding the logout button while users are not logged in and hiding the login while users are logged in.
 
-    * CSS and designing an aesthetically appealing form.
+    * Designing an aesthetically appealing form with CSS.
 
 ??? success "Screenshot: HTML Form"
 
@@ -214,9 +214,9 @@ In the html form we have included a logout button. For functionality you will ne
 
     &nbsp;&nbsp;&nbsp;&nbsp;4.Create an event listener for the button to work when clicked on.
 
-    If you are not familiar with logout buttons revisit the topic and then return here.
+    If you are not familiar with logout buttons, revisit the topic and then return here.
 
-    Here is a helpful resource on the topic of logout buttons:
+    Below is a helpful resource on the topic of logout buttons:
 
     &nbsp;&nbsp;&nbsp;&nbsp;[Logout Buttons](https://userfront.com/guide/build-logout-button-html)
 
@@ -224,11 +224,11 @@ In the html form we have included a logout button. For functionality you will ne
 
 #### 1.Create A New Javascript File
 
-We need to create a Javascript file to add all of the routes and functionality of the login. Without this we would only be able to see the html form but not use it.
+We need to create a Javascript file to add all of the routes and functionality of the login. Without this, we would only be able to see the html form but not use it.
 
 !!! warning "File Location"
 
-    This file must be inside your project folder. If it is not within the correct folders your routes may not work.
+    This file must be inside your project folder. If it is not inside the correct folders your routes may not work.
 
 ??? tip "Naming Your File"
 
@@ -315,7 +315,7 @@ Here you will learn how to run your program locally using your localhost.
 
 #### 1.Script Command
 
-Find the script in your package.json file and that will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.
+Find the scripts value in your package.json file. That will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.
 
 Initially, a script will be provided from the installation of libraries. Change this to nodemon app.js. Now you will be able to run this command in your VSCode terminal to launch the project in your local browser.
 
@@ -350,19 +350,19 @@ Replace your code with the following.
 
     Notice the dev value in the code block. 
 
-    `nodemon.js`
+    `nodemon app.js`
 
-    This is how you will run your code in the VSCode terminal.
+    With this, `nodemon app.js` will run when you execute the script `npm run dev` in the VSCode terminal.
 
 #### 2.Run Script To Start Server
 
 Remember when we installed nodemon? This is why we installed it.
 
-When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.
+When you run your script, 'npm run dev', this will trigger the command 'nodemon app.js' and your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates to your file.
 
 Now, run the script in your command terminal to start the server.
 
-You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.
+You will now be able to see your program when you open localhost:8000. Localhost number is the port number that was declared in your app.js file.
 
 ??? success "Screenshot: Port URL"
 

@@ -2,7 +2,7 @@
 
 ## Set Up A Database
 
-For the purpose of this project we will be creating a fake db.
+For the purpose of this project we will be creating a fake database.
 
 ??? tip "Advanced Users"
 
@@ -14,13 +14,13 @@ For the purpose of this project we will be creating a fake db.
 
 This file will be named fake-db.js.
 
-Inside this file we have created an array containing objects. Each object will contain a username and password.
+Inside this file we will create an array containing objects. Each object will contain a username and password.
 
 ### 2.Create a Variable
 
 Inside the fake-db.js you will create a variable.
 
-This will contain the fake database of users and passwords that you can use to access the program.
+This will contain a fake database of users and passwords that you can access for the purposes of user authentication.
 
 ??? example "Fake Database"
 
@@ -47,7 +47,7 @@ Both of these functions will return the entire object(username and password) ass
 
 !!! example "Example: "
 
-    Add this block of code, containing the first function, below the users.
+    Add this block of code, containing the first function, below the users variable.
 
     ```js
       const getUserByUsername = (username) => {
@@ -61,11 +61,11 @@ Both of these functions will return the entire object(username and password) ass
       }
     ```
 
-    This function allows us to access the username for each user.
+    This function returns all the data that we have for a user that matches the username.
 
 !!! example "Example: "
 
-    Paste this function below the first function.
+    Paste this function below the getUserByUsername function.
 
     ```js
       const getUserByUsernameAndPassword = (username, password) => {
@@ -80,11 +80,11 @@ Both of these functions will return the entire object(username and password) ass
         return user;
       }
     ```
-    This function gives us access to both the username and user.
+    This function returns all the data that we have for a user that matches the username and password.
 
 ???+ tip "External Databases"
 
-    If using another database you would code the functions differently but the logic would remain the same.
+    If using another database you would code the functions differently, but result of these functions remain the same in that they must return an object.
 
 ### 4.Export Functions
 
@@ -117,7 +117,7 @@ The libraries you will bring in will be:
 
 * Passport library
 * Local passport strategy
-* Functions you made for querying db in fake-db.js.
+* Functions you made for querying your database in fake-db.js.
 
 In app.js, you need to import all the files and libraries that you will be using.
 
@@ -149,7 +149,18 @@ To configure local strategy for authentication, you must specify the authenticat
 !!! example "Example: "
 
     ```js
-    code example
+      const localStrategy = new LocalStrategy(
+        (username, password, done) => {
+          const user = getUserByUsernameAndPassword(username, password);
+          if(user) {
+            done(null, user)
+          } else {
+            done(null, false, {
+              message: "Your login details are not valid. Please try again."
+            })
+          }
+        }
+      );
     ```
 <!-- explain the code below -->
 <!-- annotated code block with explanations on each line -->
@@ -157,15 +168,13 @@ To configure local strategy for authentication, you must specify the authenticat
 <!-- Make more concise -->
 The function will return a value that is either the user or undefined. This is used as the condition inside an if-statement.
 
-If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done to run passport's login function.
+If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done() to run passport's serializeUser() function.
 
-If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done 'NOT' to run passport's login function. Instead, it sends the error message to the console.
-
-If the passport's login function is run, passport will run the serializeUser function.
+If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done 'NOT' to run passport's login function. Instead, it will store the message inside your console's [session](./glossary.md#sessions).
 
 ### 4.Create serializeUser Function
 
-This function stores the identifying logged in user id which in this case we have used username. This information is stored inside the sessions.
+This function stores the successfully logged in user's id into the browser's session. In this case, the user's id will be their username, but normally, it should be a piece of data about the user that is unique and cannot be changed.
 
 !!! example "Function: serializeUser()"
 
@@ -179,7 +188,7 @@ This function stores the identifying logged in user id which in this case we hav
 
 ### 5.Create deserializeUser Function
 
-In this function the information that the done function inside the serialize function takes, which is the user's username, is used in deserializeUser. We use a function(name of function) from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside a variable.
+In this function the information that the done function inside the serializeUser function takes, which is the user's username, is used in deserializeUser. We use the getUserByUsername() function from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside the variable 'user'.
 
 !!! example "Function: deserializeUser()"
 
@@ -196,9 +205,9 @@ In this function the information that the done function inside the serialize fun
       });
     ```
 
-If the variable contains an object(username, password), we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.
+If the 'user' variable contains a value, indicating that getUserByUsername was successful, we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.
 
-If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.
+If the 'user variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.
 
 <!-- (Gary) put a pic if we can produce this error -->
 
@@ -222,7 +231,7 @@ Add a line of code to the bottom of passport.js.
 
     ![Export](./images/export-local.png)
 
-By running this you modify passport to use your local login strategy. As well you can now export your modified passport to app.js.
+By running this you modify the passport library to use your local login strategy. Because of this, you can now export your modified passport to app.js.
 
 ## Conclusion
 

@@ -30,7 +30,7 @@ Right now we have the following code commented out. We will need to uncomment th
     app.use(passport.initialize());
     ```
 
-This initializes passport so the application understands that we are using it.
+This initializes passport so the application understands that we are using passport inside our application.
 
 ### 3. Connect Passport To Sessions
 
@@ -121,9 +121,9 @@ There are five parts to what we have done.
 
 * Local function tells passport to use the local strategy we have configured.  
 
-* The success redirect line of code shows that if the username and password combination is valid, the user will be redirected to the "/" route.  
+* The successRedirect line of code shows that if the username and password combination is valid, the user will be redirected to the "/" route.  
 
-* The failure redirect line of code means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  
+* The failureRedirect line of code means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  
 
 * Finally, failureMessage is set to "true", meaning that on a failure to validate this user, a message will be stored in req.session.messages for the server to use.  
 
@@ -167,9 +167,9 @@ Specifically, it looks for something that matches the username and password that
 
     We access the username and password, which are located inside the body of the html, by using getUserByUsernameAndPassword function that pulls the username and password from our fake-db.
 
-Once the function takes the username and password, these are placed into another function we made to check if there is a user. It checks that a user has both a username and password. That function will either return a user or 'false'.
+Once the function takes the username and password, these are passed into another function (getUserByUsernameAndPassword) we made to check if there is a user. It checks if a user exists that has both the username and password that was passed into the function. That function will either return a user object or 'false'.
 
-The returned value becomes a variable that we can pass into future functions. If 'true', or user, then the variable will run the function in the next step, if false you will be shown an error in the console.
+The returned value becomes the variable 'user'.
 
 ???+ example "Fake-DB Function"
 
@@ -177,15 +177,15 @@ The returned value becomes a variable that we can pass into future functions. If
 
 The variable is used as a condition in an if statement.
 
-If the variable contains a user's information, we will run done(null, user), meaning that it will proceed to serializeUser().
+If the variable contains a user's information, we will run done(null, user).
   
-This function sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).
+done(null, user) sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).
 
 ???+ example "serializeUser Function"
 
     ![serializeUser](./images/serial.png)
 
-This function first creates a session that contains the user's username. This session can be accessed in your routes as req.user. After being accessed, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.
+This function first creates a session that contains the user's username, which serves as the key for deserializeUser(), which gives you the user's data when you use 'req.user' within your app.js file. Then, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.
 
 ???+ warning "Sessions Storing"
 
@@ -205,13 +205,13 @@ This function first creates a session that contains the user's username. This se
     done(null, false, {message: "Your login details are not valid. Please try again."})
     ```
 
-This activates the failure redirect in passport.authenticate(), leading the user to a new webpage with an error. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.
+This activates the failureRedirect in passport.authenticate(), leading the user to a new webpage ("/fail") with an error. As well, if failureMessage is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.
 
 ## Verify Successful Authentication
 
 To see if your passport.authenticate was successful or not, you can inspect the webpage.
 
-&nbsp;&nbsp;&nbsp;&nbsp;1.To complete this task go to the Storage tab at the top of the browser.
+&nbsp;&nbsp;&nbsp;&nbsp;1.If you are on Mac, go to the Storage tab at the top of the browser. If you are on PC, right-click to Inspect the webpage, and then go to the Storage tab.
 
 &nbsp;&nbsp;&nbsp;&nbsp;2.Click on Cookies.
 
