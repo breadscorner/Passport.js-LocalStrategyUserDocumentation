@@ -3,10 +3,10 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const path = require("path");
 const passport = require("./passport");
+const app = express();
 
 const port = process.env.port || 8000;
 
-const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
@@ -47,4 +47,3 @@ app.get("/logout", (req, res) => {
 app.listen(port, () => {
     console.log(`Server has started on port ${port}`);
 });
-

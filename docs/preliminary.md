@@ -130,7 +130,7 @@ This HTML starter code allows the browser that runs this file to understand and 
 
     &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
 
-!!! example "Code"
+!!! example "HTML File"
 
     Copy and paste the code below or look at the tip below for a shortcut.
 
@@ -163,7 +163,7 @@ This HTML starter code allows the browser that runs this file to understand and 
 
 This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.
 
-!!! example "Code"
+!!! example "HTML Form"
 
     You can copy and paste this html form into the stated part of the body in your html file.
 
@@ -244,7 +244,7 @@ We need to create a Javascript file to add all of the routes and functionality o
 
 The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application. This includes your server setup.
 
-!!! example "Code: Express Application & Server Code"
+!!! example "Express Application & Server Code"
 
     ```js
       const express = require("express");
@@ -297,7 +297,6 @@ The code snippet we have provided below can be inserted into the app.js file and
       app.listen(port, () => {
           console.log(`Server has started on port ${port}`);
       });
-
     ```
 
 This will be how your VSCode can send your application to the browser when localhost:8000 is running.
@@ -326,13 +325,13 @@ Initially, a script will be provided from the installation of libraries. Change 
 
     ![Script](./images/script-dev.png)  
 
-As you can see we have added a comma and then some code into the package.json. 
+As you can see we have added a comma and then some code into the package.json.
 
 Replace your code with the following.
 
-!!! example "Code"
+!!! example "Package.json"
 
-    ```js
+    ```json
     {
       "name": "passport-example",
       "version": "1.0.0",
@@ -345,7 +344,6 @@ Replace your code with the following.
       "author": "",
       "license": "ISC"
     }
-
     ```
 
 ??? note "Script Command"
@@ -358,7 +356,9 @@ Replace your code with the following.
 
 #### 2.Run Script To Start Server
 
-Remember when we installed nodemon? This is why we installed it. When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.
+Remember when we installed nodemon? This is why we installed it.
+
+When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.
 
 Now, run the script in your command terminal to start the server.
 

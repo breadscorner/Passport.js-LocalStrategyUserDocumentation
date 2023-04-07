@@ -147,28 +147,45 @@ Here, we manage what happens when the user clicks the 'Logout' button. When req.
 
 There is a lot that happens inside passport.authenticate().
 
-When passport.authenticate() is run, it looks at the request that is sent to it. Specifically, it looks for something that matches the username and password that it requires to run a function. In this case, this would be username and password that we have passed to it through the HTML form, which will take the form req.body.username and req.body.password.
+??? example "Passport.authenticate"
 
-???+ example "HTML Form"
+    ![Passport.authenticate](./images/pass-auth.png)
+
+When passport.authenticate() is run, it looks at the request that is sent to it from passport.js, more specifically the localStrategy() function.
+
+??? example "Local Strategy Function"
+
+    ![Local Strategy](./images/local-strat.png)
+
+Specifically, it looks for something that matches the username and password that it requires to run a function. In this case, this would be username and password that we have passed to it through the HTML form.
+
+??? example "HTML Form"
 
     ![HTML Form](./images/htmlform.png)
 
-<!-- admonition -->
-Note: They are called req.body.username and req.body.password because that's what we named the fields in our HTML, using name="username" and name="password".
+??? note "Accessing Username & Password"
 
-Once it takes the username and password, these are placed into the function we made to check if there is a user that has both that username and password. That function will either return a user or it will return false, and this value will be placed into a variable.
+    We access the username and password, which are located inside the body of the html, by using getUserByUsernameAndPassword function that pulls the username and password from our fake-db.
+
+Once the function takes the username and password, these are placed into another function we made to check if there is a user. It checks that a user has both a username and password. That function will either return a user or 'false'.
+
+The returned value becomes a variable that we can pass into future functions. If 'true', or user, then the variable will run the function in the next step, if false you will be shown an error in the console.
 
 ???+ example "Fake-DB Function"
 
     ![Fake-db Functions](./images/strat1.png)
 
-The variable is then used as a condition in an if statement. If the variable contains a user's information, we will run done(null, user). This function sends the variable into passport.serializeUser, which runs another done function: done(null, user.username).
+The variable is used as a condition in an if statement.
+
+If the variable contains a user's information, we will run done(null, user), meaning that it will proceed to serializeUser().
+  
+This function sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).
 
 ???+ example "serializeUser Function"
 
     ![serializeUser](./images/serial.png)
 
-This function first creates a session that contains the user's username. Now, this session can be access in your routes as req.user. After that, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.
+This function first creates a session that contains the user's username. This session can be accessed in your routes as req.user. After being accessed, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.
 
 ???+ warning "Sessions Storing"
 
@@ -188,7 +205,7 @@ This function first creates a session that contains the user's username. Now, th
     done(null, false, {message: "Your login details are not valid. Please try again."})
     ```
 
-This activates the failure redirect in passport.authenticate(), leading the user to a new webpage. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.
+This activates the failure redirect in passport.authenticate(), leading the user to a new webpage with an error. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.
 
 ## Verify Successful Authentication
 

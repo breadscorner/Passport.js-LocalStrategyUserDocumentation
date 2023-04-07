@@ -29,4 +29,3 @@ const localStrategy = new LocalStrategy(
   });
 
 module.exports = passport.use(localStrategy);
-
