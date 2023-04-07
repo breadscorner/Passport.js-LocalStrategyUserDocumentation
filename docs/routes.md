@@ -1,8 +1,8 @@
 # Routes
 
-## What Are Routes?
+## Purpose Of Routes
 
-In Passport.js, a route is a protected [endpoint](./glossary.md#endpoint) that requires authentication. Passport [middleware](./glossary.md#middleware) checks if the user is authenticated and redirects them to the login page or sends an error response if not. Each route is associated with an authentication strategy, like local or social authentication. Passport.js lets developers configure authentication strategies for each route to ensure only authenticated users access protected resources.
+>In Passport.js, a route is a protected [endpoint](./glossary.md#endpoint) that requires authentication. Passport [middleware](./glossary.md#middleware) checks if the user is authenticated and redirects them to the login page or sends an error response if not. Each route is associated with an authentication strategy, like local or social authentication. Passport.js lets developers configure authentication strategies for each route to ensure only authenticated users access protected resources.
 
 ## Import From Passport.js
 
@@ -63,9 +63,11 @@ By completing these steps, we now automatically have access to 2 important funct
 
 [Routes](./glossary.md#routes) are what allow you to control what happens when users enter URLs associated with your website. For example, "localhost:3000/" requires you to have a route for "/", while "localhost:3000/users" requires you to have a route for "/users". Users cannot access webpages that do not have routes leading towards them. As we are using the Express module for handling our routes, we will be using app.get and app.post to initialize our routes.
 
-To read further on Express routes, [refer to this document](https://expressjs.com/en/guide/routing.html).
+???+ warning "Express Routes"
 
-<!-- explain routes briefly and include a link for further reading -->
+    To read further on Express routes:
+
+    [Express Routes](https://expressjs.com/en/guide/routing.html).
 
 ### 1. Create A GET Route
 
@@ -115,13 +117,13 @@ Insert passport.authenticate into the POST "/login" route.
 
 There are five parts to what we have done.  
 
-* Passport.authenticate is a callback function that takes what the user has placed in the username and password fields, and then runs it through our passport module.  
+&#10004; Passport.authenticate is a callback function that takes what the user has placed in the username and password fields, and then runs it through our passport module.  
 
-* "local" tells passport to use the local strategy we have configured.  
+* Local function tells passport to use the local strategy we have configured.  
 
-* successRedirect means that if the username and password combination is valid, the user will be redirected to the "/" route.  
+* The success redirect line of code shows that if the username and password combination is valid, the user will be redirected to the "/" route.  
 
-* failureRedirect means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  
+* The failure redirect line of code means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  
 
 * Finally, failureMessage is set to "true", meaning that on a failure to validate this user, a message will be stored in req.session.messages for the server to use.  
 
@@ -186,7 +188,7 @@ This function first creates a session that contains the user's username. Now, th
     done(null, false, {message: "Your login details are not valid. Please try again."})
     ```
 
-This activates the failureRedirect of passport.authenticate(), leading the user to a new webpage. As well, if failureRedirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.
+This activates the failure redirect in passport.authenticate(), leading the user to a new webpage. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.
 
 ## Verify Successful Authentication
 
@@ -206,16 +208,14 @@ To see if your passport.authenticate was successful or not, you can inspect the 
 
 Now that you have completed these instructions you have the ability to:
 
-* Create an express.js website that can authenticate users using your own modified version of the passport.js library.
+&#10004; Create an express.js website that can authenticate users using your own modified version of the passport.js library.
 
-* Store the user's data in sessions using the express-sessions library.
+&#10004; Store the user's data in sessions using the express-sessions library.
 
-* Verify that your authentication was successful by inspecting the browser webpage.
-
-By the end of this, you will have created an Express website that authenticates users using your own modified version of the passport.js library, before storing the user's data in as a session using the express-session library.
+&#10004; Verify that your authentication was successful by inspecting the browser webpage.
 
 !!! success "Congratulations"
 
-    You have learned how to implement passport.js into your express application.
+    You have created an Express web application that authenticates its users using your own modified version of the passport.js library and stored the user's data in as a session using the express-session library.
 
 [Next Page: Troubleshooting](/trouble)

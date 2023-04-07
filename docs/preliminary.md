@@ -2,7 +2,7 @@
 
 ## Purpose Of Passport.js
 
-Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local [strategy](./glossary.md#strategies).
+>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local [strategy](./glossary.md#strategies).
 
 ## Create A Project Folder
 
@@ -14,17 +14,39 @@ The first thing you will need to do is create a folder for all of the files in t
 
 In your VSCode terminal, navigate your way to the project folder you created.
 
-Type cd ~ to navigate to your root folder
+!!! example "Command"
 
-<!-- add info navigating to project folder -->
-<!-- ensure that your command terminal in vscode is in the right folder -->
+    Run the following command to navigate to your root folder.
+
+    `cd ~`
+
+    This command will list the folders directly inside the root folder.
+
+    `ls`
+
+    Choose the folder you wish to enter and run this command.
+
+    `cd <chosen folder>`
+
+    Repeat the last two commands in order until you reach the project folder.
+
+    ??? success "Screenshot: Terminal Current Folder"
+
+        We have used passport-example as a folder name.
+
+        ![JSON File Created](./images/json-complete.png) 
 
 ## Installation and Configuration
 
->### Purpose Of NPM Installation
->
+### Purpose Of NPM Installation
+
 >Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.
-<!-- Add why we start with npm init here -->
+
+??? question "Why do we start with `npm init`?"
+
+    The command npm init is used to initialize a new npm project, which sets up the project's package.json file, while npm install is used to install the dependencies listed in the package.json file. 
+    
+    * Therefore, npm init is typically used first to establish the project's configuration before installing any dependencies.
 
 ### 1.Installing NPM
 
@@ -38,7 +60,7 @@ Once your terminal finishes downloading. Hit enter to begin structuring your jso
 
 You will be prompted in your terminal with a few questions. For the sake of this documentation we will hit enter until our terminal is once again displaying the file we are currently working in.
 
-???+ success "Screenshot: Terminal JSON File Creation"
+??? success "Screenshot: Terminal JSON File Creation"
 
     ![JSON File Creation](./images/json-file-creation.png) 
 
@@ -46,7 +68,7 @@ You will be prompted in your terminal with a few questions. For the sake of this
 
     ![JSON File Created](./images/json-complete.png) 
 
-???+ note "Updating JSON File"
+??? note "Updating JSON File"
 
     You can change this information later on inside the package.json file.
 
@@ -68,7 +90,7 @@ Running this command will install the [libraries](./glossary.md#library) you nee
 
 [Nodemon](./glossary.md#nodemon) facilitates fast Node.js app development by automatically restarting the application upon detecting changes in the project directory.
 
-???+ success "Screenshot: Successful Library Installation"
+??? success "Screenshot: Successful Library Installation"
 
     ![Library Installation](./images/library-install.png) 
 
@@ -88,11 +110,11 @@ In this section we will teach you how top create your index.html file and app.js
 
 This will be the file that contains your form. This file must be inside your project folder.
 
-???+ note "Naming Your File"
+??? note "Naming Your File"
 
     This file can be named whatever you would like however we will be referring to it as index.html
 
-???+ success "Screenshot: HTML File Creation"
+??? success "Screenshot: HTML File Creation"
 
     ![HTML File Creation](./images/html-file-creation.png) 
 
@@ -100,7 +122,7 @@ This will be the file that contains your form. This file must be inside your pro
 
 This HTML starter code allows the browser that runs this file to understand and interpret any code you write in this document.
 
-???+ note "Understanding HTML Basics"
+??? note "Understanding HTML Basics"
 
     Make sure you understand the topic of HTML file structures before proceeding.
 
@@ -108,30 +130,32 @@ This HTML starter code allows the browser that runs this file to understand and 
 
     &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
 
-Copy and paste the code below or look at the tip below for a shortcut.
+!!! example "Code"
 
-    ```html
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-      </head>
-      <body>
-        // Insert form here later
-      </body>
-    </html>
-    ```
+    Copy and paste the code below or look at the tip below for a shortcut.
 
-???+ tip "Tip: Setting Your HTML Template"
+        ```html
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+          </head>
+          <body>
+            // Insert form here later
+          </body>
+        </html>
+        ```
+
+??? tip "Tip: Setting Your HTML Template"
 
     There is a VSCode shortcut that will set your template.
 
     &nbsp;&nbsp;&nbsp;&nbsp;++exclam+enter++
 
-???+ success "Screenshot: HTML Document Template"
+??? success "Screenshot: HTML Document Template"
 
       ![HTML File Setup](./images/html-file-setup.png) 
 
@@ -139,24 +163,24 @@ Copy and paste the code below or look at the tip below for a shortcut.
 
 This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.
 
-You can copy and paste this html form into the stated part of the body in your html file.
+!!! example "Code"
+
+    You can copy and paste this html form into the stated part of the body in your html file.
 
     ```html
-
-      <form method="post" action="/login">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password"><br><br>
-        <input type="submit" value="Log In">
-      </form>
-      <form method="get" action="/logout">
-          <input type="submit" value="Log Out">
-      </form>
-
+        <form method="post" action="/login">
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username"><br>
+          <label for="password">Password:</label><br>
+          <input type="text" id="password" name="password"><br><br>
+          <input type="submit" value="Log In">
+        </form>
+        <form method="get" action="/logout">
+            <input type="submit" value="Log Out">
+        </form>
     ```
 
-???+ note "Advanced Users"
+??? note "Advanced Users"
 
     You can customize your form later but for this demonstration we will be covering the basics.
 
@@ -166,7 +190,7 @@ You can copy and paste this html form into the stated part of the body in your h
 
     * CSS and designing an aesthetically appealing form.
 
-!!! example "Screenshot: HTML Form"
+??? success "Screenshot: HTML Form"
 
     Your html file should now look like this.
 
@@ -178,7 +202,7 @@ You will need to create a route for the login but we will explain more about tha
 
 In the html form we have included a logout button. For functionality you will need to create a route for each. We will discuss this on the next page. Just understand that your buttons will not work for now.
 
-???+ note "Logout Button"
+??? note "Logout Button"
 
     There are 4 important steps to create a functional logout button.
 
@@ -206,11 +230,11 @@ We need to create a Javascript file to add all of the routes and functionality o
 
     This file must be inside your project folder. If it is not within the correct folders your routes may not work.
 
-???+ tip "Naming Your File"
+??? tip "Naming Your File"
 
     This file can be named whatever you would like however we will be referring to it as app.js.
 
-???+ success "Screenshot: Javascript File Created"
+??? success "Screenshot: Javascript File Created"
 
     Your file tabs should look similar to this.
 
@@ -220,7 +244,7 @@ We need to create a Javascript file to add all of the routes and functionality o
 
 The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application. This includes your server setup.
 
-???+ example "Code: Express Application & Server Code"
+!!! example "Code: Express Application & Server Code"
 
     ```js
       const express = require("express");
@@ -278,7 +302,7 @@ The code snippet we have provided below can be inserted into the app.js file and
 
 This will be how your VSCode can send your application to the browser when localhost:8000 is running.
 
-???+ tip "Advanced Users"
+??? tip "Advanced Users"
 
     For more advanced users, separate your code blocks into an app.js file and have your server code in a separate file called server.js.
 
@@ -298,11 +322,39 @@ Initially, a script will be provided from the installation of libraries. Change 
 
 !!! note "Note: Open package.json and add change script to start your express application"
 
-???+ example "Screenshot: Package.JSON- Starter Script"
+??? success "Screenshot: Package.JSON- Starter Script"
 
     ![Script](./images/script-dev.png)  
 
-As you can see we have added a comma and then some code into the package.json. Copy and paste this code into your package.json script(Remember to put a comma after the test).
+As you can see we have added a comma and then some code into the package.json. 
+
+Replace your code with the following.
+
+!!! example "Code"
+
+    ```js
+    {
+      "name": "passport-example",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon app.js"
+      },
+      "author": "",
+      "license": "ISC"
+    }
+
+    ```
+
+??? note "Script Command"
+
+    Notice the dev value in the code block. 
+
+    `nodemon.js`
+
+    This is how you will run your code in the VSCode terminal.
 
 #### 2.Run Script To Start Server
 
@@ -312,11 +364,19 @@ Now, run the script in your command terminal to start the server.
 
 You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.
 
-???+ example "Screenshot: Port URL"
+??? success "Screenshot: Port URL"
 
     ![Localhost:8000](./images/8000.png)  
 
-???+ example "Example: Port Listener"
+??? success "Example: Port Listener"
+
+    This code is at the top of your app.js.
+
+    ![Port Listener](./images/pl1.png)
+
+    This code is at the bottom of your app.js.
+
+    ![Port Listener](./images/pl2.png)
 
 #### 3.Run Local Browser
 
@@ -324,22 +384,21 @@ Currently, we have all of the passport.js code commented out. This is because we
 
 Run the URL localhost:8000 in your browser and you will see your application displayed.
 
-???+ question "Why Localhost:8000?"
+??? question "Why do we use localhost:8000?"
 
     We are using 8000 but you may choose your own as long as you use it throughout your entire application.
 
 Your HTML will be what is displayed in your browser window.
 
-???+ success "Screenshot: Browser URL & Form"
+??? success "Screenshot: Browser URL & Form"
 
-    [Login Form]()
-<!-- screenshot of browser with inputs -->
+    ![Login Form](./images/live-form.png)
 
 ## Conclusion
 
 By the end of this you will have successfully installed all software and setup the basics of your express app: index.html, app.js, and an updated script inside your package.json file.
 
-!!! success "Congratulations"
+??? success "Congratulations"
 
     You have successfully completed your preliminary setup for implementing passport.js.
 

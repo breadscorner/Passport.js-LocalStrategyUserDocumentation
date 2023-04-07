@@ -11,7 +11,35 @@
 >
 >For term 2 Full Stack Web Development students, Passport.js is a valuable resource that offers flexibility in terms of authentication as they learn to develop applications. By utilizing Passport.js, students can streamline the login process, allowing them to focus on learning additional skills in various programming languages, technologies, and so on.
 
-## Requirements
+## Understanding Our Documentation
+
+We have included numerous admonitions to make understanding passport.js easier for you. Some of them will have an arrow on the right hand side to collapse or open the information.
+
+!!! note "Notes"
+
+Our notes will provide relevant information to that specific instruction.
+
+!!! example "Code Blocks"
+
+This is where we have placed our code blocks. There is a copy & paste icon in the top right corner of the black code block.
+
+!!! success "Success"
+
+Here you will find screenshots of what each step should look like.
+
+!!! tip "Tips & Resources"
+
+Here we provide you with tips and relevant resources to learn passport.js.
+
+!!! warning "Read Before Proceeding"
+
+We try to warn you if there is a complicated topic to make sure that you understand the prerequisites before proceeding.
+
+!!! danger "Errors"
+
+We will show you any potential errors.
+
+## Project Requirements
 
 ### Languages & Technologies
 
@@ -33,7 +61,7 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
     * Creating files
     * Running code on your local browser
 
-???+ tip "Bonus Knowledge"
+??? tip "Bonus Knowledge"
 
     Knowledge of additional languages and technologies would be beneficial. Some examples are:
 
@@ -41,11 +69,11 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
 
     * Cascading Style Sheets (CSS)
 
-???+ warning "Inexperienced Users"
+??? warning "Inexperienced Users"
 
     Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
 
-???+ tip "Review Documentation"
+??? tip "Review Documentation"
 
     &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
 
