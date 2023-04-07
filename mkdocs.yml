@@ -4,6 +4,7 @@ site_name: 'Passport | Local Strategy'
 
 theme:
   name: 'material'
+  logo: 'images/passport logo2.png'
   features:
     - 'announce.dismiss'
     - 'content.code.annotate'
