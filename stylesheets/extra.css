@@ -12,6 +12,10 @@
   --md-accent-bg-color--light:         #D5E5EC;
 }
 
-.md-content {
-  --md-typeset-a-color: gray;
+body[data-md-color-scheme="default"] .md-typeset a {
+  --md-typeset-a-color: purple;
+}
+
+body[data-md-color-scheme="slate"] .md-typeset a {
+  --md-typeset-a-color: lightgreen;
 }
