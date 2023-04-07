@@ -402,4 +402,4 @@ By the end of this you will have successfully installed all software and setup t
 
     You have successfully completed your preliminary setup for implementing passport.js.
 
-[Next Page: Strategies](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/strategies)
+[Next Page: Strategies](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/strategies/)

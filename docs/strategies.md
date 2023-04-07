@@ -50,7 +50,7 @@ Both of these functions will return the entire object(username and password) ass
     Add this block of code, containing the first function, below the users.
 
     ```js
-          const getUserByUsername = (username) => {
+      const getUserByUsername = (username) => {
         let user;
         users.forEach(u => {
           if (u.username == username) {
