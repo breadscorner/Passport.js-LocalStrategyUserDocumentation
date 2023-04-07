@@ -380,42 +380,33 @@
 
 
 <h1 id="troubleshooting">Troubleshooting</h1>
-<!-- Min of 5 things that could go wrong and their solutions -->
-<details class="danger" open="open">
+<details class="danger">
 <summary>Authentication Not Working</summary>
 <p>Check to see if you have initialized your passport with your strategy before implementing it into your routes. There are two versions of passport inside your project but only one will work. Make sure that you have imported the correct library.  </p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-</div>
 </details>
-<details class="danger" open="open">
+<details class="danger">
 <summary>Browser Not Loading On Localhost</summary>
 <p>Check to see that you are using the correct port consistently throughout your application.</p>
 <p>Make sure you have run your script command.</p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-</div>
 </details>
-<details class="danger" open="open">
+<details class="danger">
 <summary>Local Strategy Not Getting Called</summary>
 <p>If you are using the latest version, bodyParser() is deprecated. Try using bodyParser.urlencoded({extended:true}).</p>
 <p>If this solution does not work for you review this thread from stack overflow with some other options: </p>
 <p><a href="https://stackoverflow.com/questions/18690354/passport-local-strategy-not-getting-called">Stack Overflow</a></p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-</div>
 </details>
-<details class="danger" open="open">
-<summary>Issue 4</summary>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-</div>
+<details class="danger">
+<summary>Login Button Does Not Redirect</summary>
+<p>Double check that your route path match the path in the functions.</p>
+<p>For more information you may also like to refer to the following documentation:</p>
+<p><a href="https://auth0.com/blog/create-a-simple-and-secure-node-express-app/">Auth0</a></p>
 </details>
-<details class="danger" open="open">
-<summary>Issue 5</summary>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-</div>
+<details class="danger">
+<summary>Session Is Not Showing In Browser</summary>
+<p>For this issue check your app.js. Look for the code:</p>
+<p><code>// cookie: { secure: true }</code></p>
+<p>This is commented out so that you can run this application on localhost. However, if you are running your app on https you will want to uncomment this line of code.</p>
+<p>Setting secure: true on the cookie in an Express application ensures that the cookie is only transmitted over a secure HTTPS connection. This prevents the cookie from being intercepted and stolen by attackers. It's necessary to ensure all cookies are transmitted over HTTPS when running an Express app on HTTPS.</p>
 </details>
 <p><a href="/glossary">Next Page: Glossary</a></p>
 

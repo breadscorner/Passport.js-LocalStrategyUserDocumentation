@@ -307,6 +307,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-a-project-folder" class="md-nav__link">
+    Create A Project Folder
+  </a>
+  
+    <nav class="md-nav" aria-label="Create A Project Folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1project-folder-creation" class="md-nav__link">
+    1.Project Folder Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2ensure-correct-folder-in-your-vscode-terminal" class="md-nav__link">
+    2.Ensure Correct Folder In Your VSCode Terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation-and-configuration" class="md-nav__link">
     Installation and Configuration
   </a>
@@ -582,6 +609,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#create-a-project-folder" class="md-nav__link">
+    Create A Project Folder
+  </a>
+  
+    <nav class="md-nav" aria-label="Create A Project Folder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1project-folder-creation" class="md-nav__link">
+    1.Project Folder Creation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2ensure-correct-folder-in-your-vscode-terminal" class="md-nav__link">
+    2.Ensure Correct Folder In Your VSCode Terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#installation-and-configuration" class="md-nav__link">
     Installation and Configuration
   </a>
@@ -767,12 +821,41 @@
 
 <h1 id="preliminary-setup">Preliminary Setup</h1>
 <h2 id="purpose-of-passportjs">Purpose Of Passport.js</h2>
-<p>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local <a href="../glossary/#strategies">strategy</a>.</p>
-<h2 id="installation-and-configuration">Installation and Configuration</h2>
 <blockquote>
+<p>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local <a href="../glossary/#strategies">strategy</a>.</p>
+</blockquote>
+<h2 id="create-a-project-folder">Create A Project Folder</h2>
+<h3 id="1project-folder-creation">1.Project Folder Creation</h3>
+<p>The first thing you will need to do is create a folder for all of the files in this project. Choose a place in your computer that you would like to save your project. Create the folder.</p>
+<h3 id="2ensure-correct-folder-in-your-vscode-terminal">2.Ensure Correct Folder In Your VSCode Terminal</h3>
+<p>In your VSCode terminal, navigate your way to the project folder you created.</p>
+<div class="admonition example">
+<p class="admonition-title">Command</p>
+<p>Run the following command to navigate to your root folder.</p>
+<p><code>cd ~</code></p>
+<p>This command will list the folders directly inside the root folder.</p>
+<p><code>ls</code></p>
+<p>Choose the folder you wish to enter and run this command.</p>
+<p><code>cd &lt;chosen folder&gt;</code></p>
+<p>Repeat the last two commands in order until you reach the project folder.</p>
+<details class="success">
+<summary>Screenshot: Terminal Current Folder</summary>
+<p>We have used passport-example as a folder name.</p>
+<p><img alt="JSON File Created" src="../images/json-complete.png" /> </p>
+</details>
+</div>
+<h2 id="installation-and-configuration">Installation and Configuration</h2>
 <h3 id="purpose-of-npm-installation">Purpose Of NPM Installation</h3>
+<blockquote>
 <p>Prior to installation, initializing npm is necessary to start the process. With approximately 800,000 code packages, npm is the largest software registry available. It's also an open-source platform, meaning that it is free for all users.</p>
 </blockquote>
+<details class="question">
+<summary>Why do we start with <code>npm init</code>?</summary>
+<p>The command npm init is used to initialize a new npm project, which sets up the project's package.json file, while npm install is used to install the dependencies listed in the package.json file. </p>
+<ul>
+<li>Therefore, npm init is typically used first to establish the project's configuration before installing any dependencies.</li>
+</ul>
+</details>
 <h3 id="1installing-npm">1.Installing NPM</h3>
 <p>1.Initialize npm using the command terminal by running the following command:</p>
 <div class="admonition example">
@@ -781,13 +864,13 @@
 </div>
 <p>Once your terminal finishes downloading. Hit enter to begin structuring your json file.</p>
 <p>You will be prompted in your terminal with a few questions. For the sake of this documentation we will hit enter until our terminal is once again displaying the file we are currently working in.</p>
-<details class="success" open="open">
+<details class="success">
 <summary>Screenshot: Terminal JSON File Creation</summary>
 <p><img alt="JSON File Creation" src="../images/json-file-creation.png" /> </p>
 <p>We are using a folder called passport-example.</p>
 <p><img alt="JSON File Created" src="../images/json-complete.png" /> </p>
 </details>
-<details class="note" open="open">
+<details class="note">
 <summary>Updating JSON File</summary>
 <p>You can change this information later on inside the package.json file.</p>
 </details>
@@ -804,7 +887,7 @@
 </div>
 <p>Running this command will install the <a href="../glossary/#library">libraries</a> you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.</p>
 <p><a href="../glossary/#nodemon">Nodemon</a> facilitates fast Node.js app development by automatically restarting the application upon detecting changes in the project directory.</p>
-<details class="success" open="open">
+<details class="success">
 <summary>Screenshot: Successful Library Installation</summary>
 <p><img alt="Library Installation" src="../images/library-install.png" /> </p>
 </details>
@@ -818,60 +901,68 @@
 <h3 id="create-an-html-form">Create An HTML Form</h3>
 <h4 id="1create-an-html-file">1.Create An HTML File</h4>
 <p>This will be the file that contains your form. This file must be inside your project folder.</p>
-<details class="note" open="open">
+<details class="note">
 <summary>Naming Your File</summary>
 <p>This file can be named whatever you would like however we will be referring to it as index.html</p>
 </details>
-<details class="success" open="open">
+<details class="success">
 <summary>Screenshot: HTML File Creation</summary>
 <p><img alt="HTML File Creation" src="../images/html-file-creation.png" /> </p>
 </details>
 <h4 id="2structure-your-html-document">2.Structure Your HTML Document</h4>
 <p>This HTML starter code allows the browser that runs this file to understand and interpret any code you write in this document.</p>
-<details class="note" open="open">
+<details class="note">
 <summary>Understanding HTML Basics</summary>
 <p>Make sure you understand the topic of HTML file structures before proceeding.</p>
 <p>We have provided you with some helpful documentation below:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.w3schools.com/html/">HTML Documentation</a></p>
 </details>
-<p>Copy and paste the code below or look at the tip for a shortcut.</p>
-<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<div class="admonition example">
+<p class="admonition-title">HTML File</p>
+<p>Copy and paste the code below or look at the tip below for a shortcut.</p>
+<pre><code>```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
     // Insert form here later
-  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div>
-<details class="tip" open="open">
-<summary>Setting Your HTML Template</summary>
+  &lt;/body&gt;
+&lt;/html&gt;
+```
+</code></pre>
+</div>
+<details class="tip">
+<summary>Tip: Setting Your HTML Template</summary>
 <p>There is a VSCode shortcut that will set your template.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keys"><kbd class="key-exclam">!</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span></p>
 </details>
-<details class="success" open="open">
+<details class="success">
 <summary>Screenshot: HTML Document Template</summary>
 <p><img alt="HTML File Setup" src="../images/html-file-setup.png" /> </p>
 </details>
 <h4 id="3create-an-html-form">3.Create An HTML Form</h4>
 <p>This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.</p>
+<div class="admonition example">
+<p class="admonition-title">HTML Form</p>
 <p>You can copy and paste this html form into the stated part of the body in your html file.</p>
-<div class="highlight"><pre><span></span><code>  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/login&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>Username:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;</span>Password:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log In&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/logout&quot;</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log Out&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/login&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;</span>Username:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;</span>Password:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log In&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/logout&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Log Out&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
-<details class="note" open="open">
+</div>
+<details class="note">
 <summary>Advanced Users</summary>
 <p>You can customize your form later but for this demonstration we will be covering the basics.</p>
 <p>Some features you may consider are:</p>
@@ -884,15 +975,15 @@
 </li>
 </ul>
 </details>
-<div class="admonition example">
-<p class="admonition-title">Screenshot: HTML Form</p>
+<details class="success">
+<summary>Screenshot: HTML Form</summary>
 <p>Your html file should now look like this.</p>
 <p><img alt="HTML Form Setup" src="../images/html-form.png" /></p>
-</div>
+</details>
 <p>You will need to create a route for the login but we will explain more about that on the next page.</p>
 <h4 id="4create-loginlogout-button">4.Create Login/Logout Button</h4>
 <p>In the html form we have included a logout button. For functionality you will need to create a route for each. We will discuss this on the next page. Just understand that your buttons will not work for now.</p>
-<details class="note" open="open">
+<details class="note">
 <summary>Logout Button</summary>
 <p>There are 4 important steps to create a functional logout button.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;1.Reference the logout button.</p>
@@ -910,29 +1001,73 @@
 <p class="admonition-title">File Location</p>
 <p>This file must be inside your project folder. If it is not within the correct folders your routes may not work.</p>
 </div>
-<details class="tip" open="open">
+<details class="tip">
 <summary>Naming Your File</summary>
 <p>This file can be named whatever you would like however we will be referring to it as app.js.</p>
 </details>
-<details class="success" open="open">
+<details class="success">
 <summary>Screenshot: Javascript File Created</summary>
 <p>Your file tabs should look similar to this.</p>
 <p><img alt="JS File Create" src="../images/js-file-create.png" /></p>
 </details>
 <h4 id="2insert-code">2.Insert Code</h4>
-<p>The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application.</p>
-<details class="example" open="open">
-<summary>Example: Express Application Code</summary>
-<div class="highlight"><pre><span></span><code>
+<p>The code snippet we have provided below can be inserted into the app.js file and will provide the foundation of your express application. This includes your server setup.</p>
+<div class="admonition example">
+<p class="admonition-title">Express Application &amp; Server Code</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express-session&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">passport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./passport&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">port</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mf">8000</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">bodyParser</span><span class="p">.</span><span class="nx">urlencoded</span><span class="p">({</span><span class="w"> </span><span class="nx">extended</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}));</span>
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">session</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">secret</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;keyboard cat&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">resave</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">saveUninitialized</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="c1">// cookie: { secure: true }</span>
+<span class="w">      </span><span class="c1">// To run this on localhost you must keep this commented out.</span>
+<span class="w">      </span><span class="c1">// For any user(s) planning on using this for an application using https, uncomment the cookie line of code above.</span>
+<span class="w">  </span><span class="p">}))</span>
+
+<span class="w">  </span><span class="c1">// app.use(passport.initialize())</span>
+<span class="w">  </span><span class="c1">// app.use(passport.session())</span>
+
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;/index.html&#39;</span><span class="p">));</span>
+<span class="w">  </span><span class="p">})</span>
+
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/fail&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">session</span><span class="p">.</span><span class="nx">messages</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">&quot;Failure to Log In.&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
+
+<span class="w">  </span><span class="c1">// app.post(&quot;/login&quot;, passport.authenticate(&quot;local&quot;, {</span>
+<span class="w">  </span><span class="c1">//     successRedirect: &quot;/&quot;,</span>
+<span class="w">  </span><span class="c1">//     failureRedirect: &quot;/fail&quot;,</span>
+<span class="w">  </span><span class="c1">//     failureMessage: true</span>
+<span class="w">  </span><span class="c1">// }))</span>
+
+<span class="w">  </span><span class="c1">// app.get(&quot;/logout&quot;, (req, res) =&gt; {</span>
+<span class="w">  </span><span class="c1">//     req.logout((err) =&gt; {</span>
+<span class="w">  </span><span class="c1">//         if(err) {</span>
+<span class="w">  </span><span class="c1">//             console.log(err);</span>
+<span class="w">  </span><span class="c1">//         }</span>
+<span class="w">  </span><span class="c1">//     })</span>
+<span class="w">  </span><span class="c1">//     res.redirect(&quot;/&quot;);</span>
+<span class="w">  </span><span class="c1">// })</span>
+
+<span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Server has started on port </span><span class="si">${</span><span class="nx">port</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
 </code></pre></div>
-</details>
-<p>The code block below will setup your server. This will be how your VSCode can send your code to the browser using localhost.</p>
-<details class="example" open="open">
-<summary>Example: Server Information Code</summary>
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-</details>
-<details class="tip" open="open">
+</div>
+<p>This will be how your VSCode can send your application to the browser when localhost:8000 is running.</p>
+<details class="tip">
 <summary>Advanced Users</summary>
 <p>For more advanced users, separate your code blocks into an app.js file and have your server code in a separate file called server.js.</p>
 <p>This will make for cleaner code but for now we will keep our instructions lean.</p>
@@ -942,43 +1077,72 @@
 <p>Here you will learn how to run your program locally using your localhost.</p>
 <h4 id="1script-command">1.Script Command</h4>
 <p>Find the script in your package.json file and that will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.</p>
+<p>Initially, a script will be provided from the installation of libraries. Change this to nodemon app.js. Now you will be able to run this command in your VSCode terminal to launch the project in your local browser.</p>
 <div class="admonition note">
-<p class="admonition-title">Note: Open package.json and add a script to start your express application</p>
+<p class="admonition-title">Note: Open package.json and add change script to start your express application</p>
 </div>
-<details class="example" open="open">
+<details class="success">
 <summary>Screenshot: Package.JSON- Starter Script</summary>
 <p><img alt="Script" src="../images/script-dev.png" />  </p>
 </details>
-<p>As you can see we have added a comma and then some code into the package.json. Copy and paste this code into your package.json script(Remember to put a comma after the test).</p>
+<p>As you can see we have added a comma and then some code into the package.json.</p>
+<p>Replace your code with the following.</p>
+<div class="admonition example">
+<p class="admonition-title">Package.json</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;passport-example&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;index.js&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dev&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nodemon app.js&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;license&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ISC&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<details class="note">
+<summary>Script Command</summary>
+<p>Notice the dev value in the code block. </p>
+<p><code>nodemon.js</code></p>
+<p>This is how you will run your code in the VSCode terminal.</p>
+</details>
 <h4 id="2run-script-to-start-server">2.Run Script To Start Server</h4>
-<p>Remember when we installed nodemon? This is why we installed it. When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.</p>
+<p>Remember when we installed nodemon? This is why we installed it.</p>
+<p>When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.</p>
 <p>Now, run the script in your command terminal to start the server.</p>
 <p>You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.</p>
-<details class="example" open="open">
+<details class="success">
 <summary>Screenshot: Port URL</summary>
 <p><img alt="Localhost:8000" src="../images/8000.png" />  </p>
 </details>
-<details class="example" open="open">
+<details class="success">
 <summary>Example: Port Listener</summary>
+<p>This code is at the top of your app.js.</p>
+<p><img alt="Port Listener" src="../images/pl1.png" /></p>
+<p>This code is at the bottom of your app.js.</p>
+<p><img alt="Port Listener" src="../images/pl2.png" /></p>
 </details>
 <h4 id="3run-local-browser">3.Run Local Browser</h4>
+<p>Currently, we have all of the passport.js code commented out. This is because we have not yet set up passport configuration, a database(Including methods), or the routes.</p>
 <p>Run the URL localhost:8000 in your browser and you will see your application displayed.</p>
-<details class="question" open="open">
-<summary>Why Localhost:8000?</summary>
+<details class="question">
+<summary>Why do we use localhost:8000?</summary>
 <p>We are using 8000 but you may choose your own as long as you use it throughout your entire application.</p>
 </details>
 <p>Your HTML will be what is displayed in your browser window.</p>
-<details class="example" open="open">
-<summary>Example: Browser URL &amp; Form</summary>
+<details class="success">
+<summary>Screenshot: Browser URL &amp; Form</summary>
+<p><img alt="Login Form" src="../images/live-form.png" /></p>
 </details>
-<!-- screenshot of browser with inputs -->
-
 <h2 id="conclusion">Conclusion</h2>
 <p>By the end of this you will have successfully installed all software and setup the basics of your express app: index.html, app.js, and an updated script inside your package.json file.</p>
-<div class="admonition success">
-<p class="admonition-title">Congratulations</p>
+<details class="success">
+<summary>Congratulations</summary>
 <p>You have successfully completed your preliminary setup for implementing passport.js.</p>
-</div>
+</details>
 <p><a href="/strategies">Next Page: Strategies</a></p>
 
 

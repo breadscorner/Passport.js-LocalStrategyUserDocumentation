@@ -328,8 +328,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-routes" class="md-nav__link">
-    What Are Routes?
+  <a href="#purpose-of-routes" class="md-nav__link">
+    Purpose Of Routes
   </a>
   
 </li>
@@ -344,14 +344,14 @@
         
           <li class="md-nav__item">
   <a href="#1-require-passport-from-passportjs" class="md-nav__link">
-    1. Require passport from passport.js.
+    1. Require passport from passport.js
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-use-appuse-to-initialize-passport" class="md-nav__link">
-    2. Use app.use() to initialize passport.
+    2. Use app.use() to initialize passport
   </a>
   
 </li>
@@ -377,8 +377,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-get-route-to-access-the-form" class="md-nav__link">
-    1. Create a GET route to access the form
+  <a href="#1-create-a-get-route" class="md-nav__link">
+    1. Create A GET Route
   </a>
   
 </li>
@@ -391,8 +391,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-insert-passportauthenticate-into-the-post-login-route" class="md-nav__link">
-    3. Insert passport.authenticate into the POST "/login" route
+  <a href="#3-complete-login-route" class="md-nav__link">
+    3. Complete Login Route
   </a>
   
 </li>
@@ -410,8 +410,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#passportauthenticate-explained" class="md-nav__link">
-    Passport.authenticate explained
+  <a href="#passportauthenticate" class="md-nav__link">
+    Passport.authenticate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-successful-authentication" class="md-nav__link">
+    Verify Successful Authentication
   </a>
   
 </li>
@@ -495,8 +502,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-are-routes" class="md-nav__link">
-    What Are Routes?
+  <a href="#purpose-of-routes" class="md-nav__link">
+    Purpose Of Routes
   </a>
   
 </li>
@@ -511,14 +518,14 @@
         
           <li class="md-nav__item">
   <a href="#1-require-passport-from-passportjs" class="md-nav__link">
-    1. Require passport from passport.js.
+    1. Require passport from passport.js
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-use-appuse-to-initialize-passport" class="md-nav__link">
-    2. Use app.use() to initialize passport.
+    2. Use app.use() to initialize passport
   </a>
   
 </li>
@@ -544,8 +551,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-get-route-to-access-the-form" class="md-nav__link">
-    1. Create a GET route to access the form
+  <a href="#1-create-a-get-route" class="md-nav__link">
+    1. Create A GET Route
   </a>
   
 </li>
@@ -558,8 +565,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-insert-passportauthenticate-into-the-post-login-route" class="md-nav__link">
-    3. Insert passport.authenticate into the POST "/login" route
+  <a href="#3-complete-login-route" class="md-nav__link">
+    3. Complete Login Route
   </a>
   
 </li>
@@ -577,8 +584,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#passportauthenticate-explained" class="md-nav__link">
-    Passport.authenticate explained
+  <a href="#passportauthenticate" class="md-nav__link">
+    Passport.authenticate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-successful-authentication" class="md-nav__link">
+    Verify Successful Authentication
   </a>
   
 </li>
@@ -606,72 +620,189 @@
 
 
 <h1 id="routes">Routes</h1>
-<h2 id="what-are-routes">What Are Routes?</h2>
+<h2 id="purpose-of-routes">Purpose Of Routes</h2>
+<blockquote>
 <p>In Passport.js, a route is a protected <a href="../glossary/#endpoint">endpoint</a> that requires authentication. Passport <a href="../glossary/#middleware">middleware</a> checks if the user is authenticated and redirects them to the login page or sends an error response if not. Each route is associated with an authentication strategy, like local or social authentication. Passport.js lets developers configure authentication strategies for each route to ensure only authenticated users access protected resources.</p>
+</blockquote>
 <h2 id="import-from-passportjs">Import From Passport.js</h2>
-<h3 id="1-require-passport-from-passportjs">1. Require passport from passport.js.</h3>
-<p>This imports our modified passport module, which contains our local login strategy.  </p>
-<h3 id="2-use-appuse-to-initialize-passport">2. Use app.use() to initialize passport.</h3>
-<p><code>app.use(passport.initialize())</code>
-This initializes passport so the app understands that we are using it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>For the following instructions make sure that you are working inside of your app.js file.</p>
+</div>
+<h3 id="1-require-passport-from-passportjs">1. Require passport from passport.js</h3>
+<p>This imports our modified passport module, which contains our local login strategy that we are exporting from inside of passport.js. Uncomment the following lines of code to allow passport.js to be used in your application.</p>
+<div class="admonition example">
+<p class="admonition-title">Code: Uncomment</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">passport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./passport&quot;</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<h3 id="2-use-appuse-to-initialize-passport">2. Use app.use() to initialize passport</h3>
+<p>Right now we have the following code commented out. We will need to uncomment them to allow the application to use passport.js.</p>
+<div class="admonition example">
+<p class="admonition-title">Code: Uncomment</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">passport</span><span class="p">.</span><span class="nx">initialize</span><span class="p">());</span>
+</code></pre></div>
+</div>
+<p>This initializes passport so the application understands that we are using it.</p>
 <h3 id="3-connect-passport-to-sessions">3. Connect Passport To Sessions</h3>
-<p><code>app.use(passport.session())</code>
-By doing this we can ensure that passport connects to sessions so that we are storing the user information properly when we call the serializeUser function.</p>
-<!-- show code block of routes -->
-
-<p>With these three lines of code in place, we now automatically have access to 2 important functions that exist within passport: passport.authenticate and req.logout.</p>
+<p>Right now we have the following code commented out. We will need to uncomment them to allow the application to use passport.js.</p>
+<div class="admonition example">
+<p class="admonition-title">Code: Uncomment</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">passport</span><span class="p">.</span><span class="nx">session</span><span class="p">());</span>
+</code></pre></div>
+</div>
+<p>By adding this line of code to the top of app.js we can ensure that passport connects to <a href="./glossary.md/sessions">sessions</a> so that we are storing the user information properly when we call the serializeUser function.</p>
+<details class="success" open="open">
+<summary>Middleware</summary>
+<p>The top of your app.js should look like this screenshot.</p>
+<p><img alt="Routing Middleware" src="../images/middleware.png" /></p>
+</details>
+<p>By completing these steps, we now automatically have access to 2 important functions that exist within passport:</p>
+<div class="admonition example">
+<p class="admonition-title">Functions</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">passport</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">()</span>
+<span class="w">  </span><span class="nx">req</span><span class="p">.</span><span class="nx">logout</span><span class="p">()</span>
+</code></pre></div>
+</div>
 <h2 id="using-passport-functions-inside-routes">Using Passport Functions Inside Routes</h2>
 <p><a href="../glossary/#routes">Routes</a> are what allow you to control what happens when users enter URLs associated with your website. For example, "localhost:3000/" requires you to have a route for "/", while "localhost:3000/users" requires you to have a route for "/users". Users cannot access webpages that do not have routes leading towards them. As we are using the Express module for handling our routes, we will be using app.get and app.post to initialize our routes.</p>
-<p>To read further on Express routes, <a href="https://expressjs.com/en/guide/routing.html">refer to this document</a>.</p>
-<!-- explain routes briefly and include a link for further reading -->
-
-<h3 id="1-create-a-get-route-to-access-the-form">1. Create a GET route to access the form</h3>
-<div class="highlight"><pre><span></span><code>app.get(&quot;/&quot;, (req, res) =&gt; {
-    res.render(&quot;index&quot;)
-})
+<details class="warning" open="open">
+<summary>Express Routes</summary>
+<p>To read further on Express routes:</p>
+<p><a href="https://expressjs.com/en/guide/routing.html">Express Routes</a>.</p>
+</details>
+<h3 id="1-create-a-get-route">1. Create A GET Route</h3>
+<p>Creating a get route will allow you to access the form.</p>
+<div class="admonition example">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">sendFile</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;/index.html&#39;</span><span class="p">));</span>
+<span class="w">  </span><span class="p">})</span>
 </code></pre></div>
-<p>By doing this, when users access your website's homepage, your app will recognize the route, and know to render the index.html file as a response, before finally sending it off to the user's browser. This is what allows users to see your website's homepage.</p>
+</div>
+<p>By doing this, when users access your website's homepage, your app will recognize the route and know to respond by sending the index.html file to the user's browser. This is what allows users to see your website's homepage.</p>
 <h3 id="2-create-a-post-route-for-when-the-user-clicks-the-button-to-submit-the-form">2. Create a POST route for when the user clicks the button to submit the form</h3>
-<p><div class="highlight"><pre><span></span><code>app.post(&quot;/login&quot;) {
-
-}
+<div class="admonition example">
+<p class="admonition-title">Code: Uncomment</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Login logic goes here</span>
+<span class="w">  </span><span class="p">}</span>
 </code></pre></div>
-Here, rather than using app.get, we use app.post, because that is the method that we defined in our HTML form. As well, we use the "/login" route, because that is the action we defined in our HTML form. Therefore, when a user clicks the submit button on that form, they will activate this route.</p>
-<h3 id="3-insert-passportauthenticate-into-the-post-login-route">3. Insert passport.authenticate into the POST "/login" route</h3>
-<p><div class="highlight"><pre><span></span><code>app.post(&quot;/login&quot;, passport.authenticate(&quot;local&quot;, {
-    successRedirect: &quot;/&quot;,
-    failureRedirect: &quot;/&quot;,
-    failureMessage: true,
-}))
+</div>
+<p>Here, rather than using app.get, we use app.post, because that is the method that we defined in our HTML form. As well, we use the "/login" route, because that is the action we defined in our HTML form. Therefore, when a user clicks the submit button on that form, they will activate this route.</p>
+<details class="warning" open="open">
+<summary>Route Types</summary>
+<p>If you need further clarification about post and get routes please read this documentation before proceeding.</p>
+<p><a href="https://expressjs.com/en/guide/routing.html">Route Types</a></p>
+</details>
+<h3 id="3-complete-login-route">3. Complete Login Route</h3>
+<p>Insert passport.authenticate into the POST "/login" route.</p>
+<div class="admonition example">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">passport</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s2">&quot;local&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">successRedirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">failureRedirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/fail&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">failureMessage</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="p">}))</span>
 </code></pre></div>
-There are five parts to what we have done.  </p>
-<p>passport.authenticate is a callback function that takes what the user has placed in the username and password fields, and then runs it through our passport module.  </p>
-<p>"local" tells passport to use the local strategy we have configured.  </p>
-<p>successRedirect means that if the username and password combination is valid, the user will be redirected to the "/" route.  </p>
-<p>failureRedirect means that if the username and password combination is invalid, the user will be redirected to the "/" route (because we only have one route in our app; normally they'd be sent to a different route).  </p>
+</div>
+<p>There are five parts to what we have done.  </p>
+<p>&#10004; Passport.authenticate is a callback function that takes what the user has placed in the username and password fields, and then runs it through our passport module.  </p>
+<ul>
+<li>
+<p>Local function tells passport to use the local strategy we have configured.  </p>
+</li>
+<li>
+<p>The success redirect line of code shows that if the username and password combination is valid, the user will be redirected to the "/" route.  </p>
+</li>
+<li>
+<p>The failure redirect line of code means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  </p>
+</li>
+<li>
 <p>Finally, failureMessage is set to "true", meaning that on a failure to validate this user, a message will be stored in req.session.messages for the server to use.  </p>
+</li>
+</ul>
 <h3 id="4-create-a-logout-route-and-enable-the-logout-using-reqlogout">4. Create a logout route and enable the logout using req.logout()</h3>
-<p><div class="highlight"><pre><span></span><code>app.get(&quot;/logout&quot;, (req, res) =&gt; {
-    req.logout((err) =&gt; {
-      console.log(err);
-    })
-    res.redirect(&quot;/&quot;);
-})
+<div class="admonition example">
+<p class="admonition-title">Code</p>
+<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/logout&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">req</span><span class="p">.</span><span class="nx">logout</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="p">})</span>
 </code></pre></div>
-Here, we manage what happens when the user clicks the 'Logout' button. When req.logout, a function that belongs to the passport library, is activated, the user session that a successful passport.authenticate creates is destroyed. Because of this, the user will no longer have their username stored inside their browser's session. After this is performed successfully, res.redirect will redirect the user to the "/" route.</p>
-<h2 id="passportauthenticate-explained">Passport.authenticate explained</h2>
-<!-- Explain what we have created and how these routes work -->
-<p>There is a lot that happens inside passport.authenticate. Here, we will explain what exactly it does.  </p>
-<p>When passport.authenticate is run, it looks at the request that is sent to it. Specifically, it looks for something that matches the username and password that it requires to run a function. In this case, this would be username and password that we have passed to it through the HTML form, which will take the form req.body.username and req.body.password.</p>
-<p>Note: They are called req.body.username and req.body.password because that's what we named the fields in our HTML, using name="username" and name="password".</p>
-<p>Once it takes the username and password, these are placed into the asynchronous function we made to check if there is a user that has both that username and password. That function will either return a user or it will return false, and this value will be placed into a variable.</p>
-<p>The variable is then used as a condition in an if statement. If the variable contains a user's information, we will run done(null, user). This function sends the variable into passport.serializeUser, which runs another done function: done(null, user.username). This function first creates a session that contains the user's username. After that, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.</p>
-<p>If the variable contains false, we will run done(null, false, {message: "Your login details are not valid. Please try again."}). This activates the failureRedirect of passport.authenticate(), leading the user to a new webpage. As well, if failureRedirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.</p>
-<h2 id="conclusion">Conclusion</h2>
-<!-- celebrate -->
-<p>By the end of this, you will have created an Express website that authenticates users using your own modified version of the passport.js library, before storing the user's data in as a session using the express-session library. To see if your passport.authenticate was successful or not, you can inspect the webpage, go to the Storage tab, and then go click on Cookies. If there is a session stored there, then that means your passport.authenticate() and passport.serializeUser() were successful.</p>
+</div>
+<p>Here, we manage what happens when the user clicks the 'Logout' button. When req.logout(), a function that belongs to the passport library, is activated, the user session that a successful passport.authenticate() creates is destroyed. Because of this, the user will no longer have their username stored inside their browser's session. After this is performed successfully, res.redirect() will redirect the user to the "/" route.</p>
+<h2 id="passportauthenticate">Passport.authenticate</h2>
+<!-- Armaan double check please -->
+
+<p>There is a lot that happens inside passport.authenticate().</p>
+<details class="example">
+<summary>Passport.authenticate</summary>
+<p><img alt="Passport.authenticate" src="../images/pass-auth.png" /></p>
+</details>
+<p>When passport.authenticate() is run, it looks at the request that is sent to it from passport.js, more specifically the localStrategy() function.</p>
+<details class="example">
+<summary>Local Strategy Function</summary>
+<p><img alt="Local Strategy" src="../images/local-strat.png" /></p>
+</details>
+<p>Specifically, it looks for something that matches the username and password that it requires to run a function. In this case, this would be username and password that we have passed to it through the HTML form.</p>
+<details class="example">
+<summary>HTML Form</summary>
+<p><img alt="HTML Form" src="../images/htmlform.png" /></p>
+</details>
+<details class="note">
+<summary>Accessing Username &amp; Password</summary>
+<p>We access the username and password, which are located inside the body of the html, by using getUserByUsernameAndPassword function that pulls the username and password from our fake-db.</p>
+</details>
+<p>Once the function takes the username and password, these are placed into another function we made to check if there is a user. It checks that a user has both a username and password. That function will either return a user or 'false'.</p>
+<p>The returned value becomes a variable that we can pass into future functions. If 'true', or user, then the variable will run the function in the next step, if false you will be shown an error in the console.</p>
+<details class="example" open="open">
+<summary>Fake-DB Function</summary>
+<p><img alt="Fake-db Functions" src="../images/strat1.png" /></p>
+</details>
+<p>The variable is used as a condition in an if statement.</p>
+<p>If the variable contains a user's information, we will run done(null, user), meaning that it will proceed to serializeUser().</p>
+<p>This function sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).</p>
+<details class="example" open="open">
+<summary>serializeUser Function</summary>
+<p><img alt="serializeUser" src="../images/serial.png" /></p>
+</details>
+<p>This function first creates a session that contains the user's username. This session can be accessed in your routes as req.user. After being accessed, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.</p>
+<details class="warning" open="open">
+<summary>Sessions Storing</summary>
+<p>If you are not comfortable with storing sessions read the documentation and return to this step.</p>
+<p><a href="https://www.freecodecamp.org/news/how-web-storage-works/#:~:text=Session%20storage%20allows%20you%20to,data%20stored%20in%20session%20storage.">Sessions Storage</a></p>
+</details>
+<details class="example" open="open">
+<summary>Route Redirects</summary>
+<p><img alt="Route Redirect" src="../images/sucfail.png" /></p>
+</details>
+<details class="danger" open="open">
+<summary>Variable Equals False</summary>
+<p>If the variable contains false, the program will run the following code:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your login details are not valid. Please try again.&quot;</span><span class="p">})</span>
+</code></pre></div>
+</details>
+<p>This activates the failure redirect in passport.authenticate(), leading the user to a new webpage with an error. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.</p>
+<h2 id="verify-successful-authentication">Verify Successful Authentication</h2>
+<p>To see if your passport.authenticate was successful or not, you can inspect the webpage.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1.To complete this task go to the Storage tab at the top of the browser.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;2.Click on Cookies.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;3.If there is a session stored there, then that means your passport.authenticate() and passport.serializeUser() were successful.</p>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Sessions</p>
+<p><img alt="Sessions Console" src="../images/seshcookie.png" /></p>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>Now that you have completed these instructions you have the ability to:</p>
+<p>&#10004; Create an express.js website that can authenticate users using your own modified version of the passport.js library.</p>
+<p>&#10004; Store the user's data in sessions using the express-sessions library.</p>
+<p>&#10004; Verify that your authentication was successful by inspecting the browser webpage.</p>
+<div class="admonition success">
+<p class="admonition-title">Congratulations</p>
+<p>You have created an Express web application that authenticates its users using your own modified version of the passport.js library and stored the user's data in as a session using the express-session library.</p>
 </div>
 <p><a href="/trouble">Next Page: Troubleshooting</a></p>
 
