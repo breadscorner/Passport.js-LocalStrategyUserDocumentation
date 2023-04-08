@@ -9,7 +9,7 @@
 
 >### Benefits For Full Stack Students
 >
->For term 2 Full Stack Web Development students, Passport.js is a valuable resource that offers flexibility in terms of authentication as they learn to develop applications. By utilizing Passport.js, students can streamline the login process, allowing them to focus on learning additional skills in various programming languages, technologies, and so on.
+>For Term 2 Full Stack Web Development students, Passport.js is a valuable library that offers flexibility in terms of authentication as students learn to develop applications. By utilizing Passport.js, students can streamline the login process, allowing them to focus on learning additional skills in various programming languages, technologies, and so on.
 
 ## Understanding Our Documentation
 
@@ -17,27 +17,27 @@ We have included numerous admonitions to make understanding passport.js easier f
 
 ??? note "Notes"
 
-    Our notes will provide relevant information to that specific instruction.
+    Notes will provide relevant information to that specific instruction.
 
 ??? example "Code Blocks"
 
-    This is where we have placed our code blocks. There is a copy & paste icon in the top right corner of the black code block.
+    Code samples will be placed in these code blocks. There is a copy & paste icon in the top right corner of the black code block.
 
 ??? success "Success"
 
-    Here you will find screenshots of what each step should look like.
+    Screenshots will be placed here, providing you with an example of what each step should look like.
 
 ??? tip "Tips & Resources"
 
-    Here we provide you with tips and relevant resources to learn passport.js.
+    Tips and links to relevant resources will be provided here, allowing you to learn more about passport.js and related libraries.
 
 ??? warning "Read Before Proceeding"
 
-    We try to warn you if there is a complicated topic to make sure that you understand the prerequisites before proceeding.
+    Warnings will be placed here to make sure that you understand the prerequisites before proceeding with complicated instructions.
 
 ??? danger "Errors"
 
-    We will show you any potential errors.
+    Potential errors will be shown here.
 
 ## Project Requirements
 
@@ -52,8 +52,8 @@ To learn Passport.js, users should have fundamental knowledge of certain languag
 
 &nbsp;&nbsp;&nbsp;&nbsp;&#10004; Javascript
 
-* Event listeners
-* Adding functionality to forms
+  * Event listeners
+  * Adding functionality to forms
 
 &nbsp;&nbsp;&nbsp;&nbsp;&#10004; Express
 

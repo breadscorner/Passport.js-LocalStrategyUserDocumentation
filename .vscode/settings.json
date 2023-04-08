@@ -5,5 +5,8 @@
     "htmltitle",
     "pymdownx",
     "superfences"
+  ],
+  "cSpell.ignoreWords": [
+    "resave"
   ]
 }
