@@ -17,7 +17,7 @@ This imports our modified passport module, which contains our local login strate
 !!! example "Code: Uncomment"
 
     ```js
-    const passport = require("./passport");
+      const passport = require("./passport");
     ```
 
 ### 2. Use app.use() to initialize passport
@@ -27,7 +27,7 @@ Right now we have the following code commented out. We will need to uncomment th
 !!! example "Code: Uncomment"
 
     ```js
-    app.use(passport.initialize());
+      app.use(passport.initialize());
     ```
 
 This initializes passport so the application understands that we are using it.
@@ -39,7 +39,7 @@ Right now we have the following code commented out. We will need to uncomment th
 !!! example "Code: Uncomment"
 
     ```js
-    app.use(passport.session());
+      app.use(passport.session());
     ```
 
 By adding this line of code to the top of app.js we can ensure that passport connects to [sessions](./glossary.md/sessions) so that we are storing the user information properly when we call the serializeUser function.
@@ -108,11 +108,11 @@ Insert passport.authenticate into the POST "/login" route.
 !!! example "Code"
 
     ```js
-    app.post("/login", passport.authenticate("local", {
-        successRedirect: "/",
-        failureRedirect: "/fail",
-        failureMessage: true,
-    }))
+      app.post("/login", passport.authenticate("local", {
+          successRedirect: "/",
+          failureRedirect: "/fail",
+          failureMessage: true,
+      }))
     ```
 
 There are five parts to what we have done.  
@@ -127,39 +127,42 @@ There are five parts to what we have done.
 
 * Finally, failureMessage is set to "true", meaning that on a failure to validate this user, a message will be stored in req.session.messages for the server to use.  
 
-### 4. Create a logout route and enable the logout using req.logout()
+### 4. Create Logout Route
+
+A logout route needs to be created to enable the logout button. This is done by using req.logout().
 
 !!! example "Code"
 
+    This route will be in your app.js file below the other routes. Uncomment it out.
+
     ```js
-    app.get("/logout", (req, res) => {
-        req.logout((err) => {
-          console.log(err);
-        })
-        res.redirect("/");
-    })
+      app.get("/logout", (req, res) => {
+          req.logout((err) => {
+            console.log(err);
+          })
+          res.redirect("/");
+      })
     ```
 
 Here, we manage what happens when the user clicks the 'Logout' button. When req.logout(), a function that belongs to the passport library, is activated, the user session that a successful passport.authenticate() creates is destroyed. Because of this, the user will no longer have their username stored inside their browser's session. After this is performed successfully, res.redirect() will redirect the user to the "/" route.
 
 ## Passport.authenticate
-<!-- Armaan double check please -->
 
 There is a lot that happens inside passport.authenticate().
 
-??? example "Passport.authenticate"
+??? success "Passport.authenticate"
 
     ![Passport.authenticate](./images/pass-auth.png)
 
 When passport.authenticate() is run, it looks at the request that is sent to it from passport.js, more specifically the localStrategy() function.
 
-??? example "Local Strategy Function"
+??? success "Local Strategy Function"
 
     ![Local Strategy](./images/local-strat.png)
 
 Specifically, it looks for something that matches the username and password that it requires to run a function. In this case, this would be username and password that we have passed to it through the HTML form.
 
-??? example "HTML Form"
+??? success "HTML Form"
 
     ![HTML Form](./images/htmlform.png)
 
@@ -171,7 +174,7 @@ Once the function takes the username and password, these are placed into another
 
 The returned value becomes a variable that we can pass into future functions. If 'true', or user, then the variable will run the function in the next step, if false you will be shown an error in the console.
 
-???+ example "Fake-DB Function"
+??? success "Fake-DB Function"
 
     ![Fake-db Functions](./images/strat1.png)
 
@@ -181,7 +184,7 @@ If the variable contains a user's information, we will run done(null, user), mea
   
 This function sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).
 
-???+ example "serializeUser Function"
+???+ success "serializeUser Function"
 
     ![serializeUser](./images/serial.png)
 
@@ -193,7 +196,7 @@ This function first creates a session that contains the user's username. This se
 
     [Sessions Storage](https://www.freecodecamp.org/news/how-web-storage-works/#:~:text=Session%20storage%20allows%20you%20to,data%20stored%20in%20session%20storage.)
 
-???+ example "Route Redirects"
+???+ success "Route Redirects"
 
     ![Route Redirect](./images/sucfail.png)
 
@@ -202,7 +205,7 @@ This function first creates a session that contains the user's username. This se
     If the variable contains false, the program will run the following code:
     
     ```js
-    done(null, false, {message: "Your login details are not valid. Please try again."})
+      done(null, false, {message: "Your login details are not valid. Please try again."})
     ```
 
 This activates the failure redirect in passport.authenticate(), leading the user to a new webpage with an error. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.

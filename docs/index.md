@@ -15,29 +15,29 @@
 
 We have included numerous admonitions to make understanding passport.js easier for you. Some of them will have an arrow on the right hand side to collapse or open the information.
 
-!!! note "Notes"
+??? note "Notes"
 
-Our notes will provide relevant information to that specific instruction.
+    Our notes will provide relevant information to that specific instruction.
 
-!!! example "Code Blocks"
+??? example "Code Blocks"
 
-This is where we have placed our code blocks. There is a copy & paste icon in the top right corner of the black code block.
+    This is where we have placed our code blocks. There is a copy & paste icon in the top right corner of the black code block.
 
-!!! success "Success"
+??? success "Success"
 
-Here you will find screenshots of what each step should look like.
+    Here you will find screenshots of what each step should look like.
 
-!!! tip "Tips & Resources"
+??? tip "Tips & Resources"
 
-Here we provide you with tips and relevant resources to learn passport.js.
+    Here we provide you with tips and relevant resources to learn passport.js.
 
-!!! warning "Read Before Proceeding"
+??? warning "Read Before Proceeding"
 
-We try to warn you if there is a complicated topic to make sure that you understand the prerequisites before proceeding.
+    We try to warn you if there is a complicated topic to make sure that you understand the prerequisites before proceeding.
 
-!!! danger "Errors"
+??? danger "Errors"
 
-We will show you any potential errors.
+    We will show you any potential errors.
 
 ## Project Requirements
 
@@ -45,47 +45,46 @@ We will show you any potential errors.
 
 To learn Passport.js, users should have fundamental knowledge of certain languages and technologies, including:
 
-&#10004; HTML
+&nbsp;&nbsp;&nbsp;&nbsp;&#10004; HTML
 
-  * Creating forms
-  * Creating buttons
+* Creating forms
+* Creating buttons
 
-&#10004; Javascript
+&nbsp;&nbsp;&nbsp;&nbsp;&#10004; Javascript
 
-  * Event listeners
-  * Adding functionality to forms
+* Event listeners
+* Adding functionality to forms
 
-&#10004; Express
+&nbsp;&nbsp;&nbsp;&nbsp;&#10004; Express
 
-  * Setting up an express application
+* Setting up an express application
 
-&#10004; Visual Studio Code (VSCode)
+&nbsp;&nbsp;&nbsp;&nbsp;&#10004; Visual Studio Code (VSCode)
 
-  * Creating files
-  * Running code on your local browser
+* Creating files
+* Running code on your local browser
 
 ??? tip "Bonus Knowledge"
 
     Knowledge of additional languages and technologies would be beneficial. Some examples are:
 
     * Express Sessions
-
     * Cascading Style Sheets (CSS)
 
 ??? warning "Inexperienced Users"
 
     Users who lack confidence in these languages and technologies should review their respective documentation before learning Passport.js.
 
-??? tip "Review Documentation"
+    ??? tip "Review Documentation"
 
-    &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
+        &nbsp;&nbsp;&nbsp;&nbsp;[HTML Documentation](https://www.w3schools.com/html/)
 
-    &nbsp;&nbsp;&nbsp;&nbsp;[HTML Forms](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+        &nbsp;&nbsp;&nbsp;&nbsp;[HTML Forms](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 
-    &nbsp;&nbsp;&nbsp;&nbsp;[Javascript](https://www.w3schools.com/js/)
+        &nbsp;&nbsp;&nbsp;&nbsp;[Javascript](https://www.w3schools.com/js/)
 
-    &nbsp;&nbsp;&nbsp;&nbsp;[Javascript Event Listeners](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+        &nbsp;&nbsp;&nbsp;&nbsp;[Javascript Event Listeners](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 
-    &nbsp;&nbsp;&nbsp;&nbsp;[Express](https://expressjs.com/)
+        &nbsp;&nbsp;&nbsp;&nbsp;[Express](https://expressjs.com/)
 
 [Next Page: Preliminary Setup](https://breadscorner.github.io/Passport.js-LocalStrategyUserDocumentation/preliminary)

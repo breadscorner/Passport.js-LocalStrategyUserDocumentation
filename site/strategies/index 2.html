@@ -336,8 +336,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3create-2-functions" class="md-nav__link">
-    3.Create 2 Functions
+  <a href="#3create-export-functions" class="md-nav__link">
+    3.Create &amp; Export Functions
   </a>
   
 </li>
@@ -537,8 +537,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3create-2-functions" class="md-nav__link">
-    3.Create 2 Functions
+  <a href="#3create-export-functions" class="md-nav__link">
+    3.Create &amp; Export Functions
   </a>
   
 </li>
@@ -647,19 +647,33 @@
 
 <h1 id="strategies">Strategies</h1>
 <h2 id="set-up-a-database">Set Up A Database</h2>
-<p>For the purpose of this project we will be creating a fake db. However, you can read documentation on the implementation of a real database, such as mysql or mongodb. You can swap out the fake database for a real one by following the documentation for those languages and technologies.</p>
-<p>Link: database implementation link</p>
+<p>For the purpose of this project we will be creating a fake db.</p>
+<details class="tip">
+<summary>Advanced Users</summary>
+<p>You can read documentation on the implementation of a real database, such as MySQL or MongoDB. You can swap out the fake database for a real one by following the documentation for those languages and technologies.</p>
+<p><a href="https://blog.devart.com/how-to-connect-to-mysql-server.html">Database Implementation</a></p>
+</details>
 <h3 id="1create-a-file">1.Create A File</h3>
 <p>This file will be named fake-db.js.</p>
-<p>Inside this file we will create an array containing objects. Each objects contain the username and password of the respective user.</p>
+<p>Inside this file we have created an array containing objects. Each object will contain a username and password.</p>
 <h3 id="2create-a-variable">2.Create a Variable</h3>
-<p>Inside the inside the fake-db.js you will create a variable.</p>
+<p>Inside the fake-db.js you will create a variable.</p>
 <p>This will contain the fake database of users and passwords that you can use to access the program.</p>
-<div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example</code></p>
-</div>
-<h3 id="3create-2-functions">3.Create 2 Functions</h3>
+<details class="example">
+<summary>Fake Database</summary>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Gary&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;gg&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">username</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Brett&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">      </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bb&quot;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+</code></pre></div>
+</details>
+<h3 id="3create-export-functions">3.Create &amp; Export Functions</h3>
 <ul>
 <li>
 <p>For getting the user by the username or password.</p>
@@ -671,16 +685,36 @@
 <p>Both of these functions will return the entire object(username and password) associated with the requested user.</p>
 <div class="admonition example">
 <p class="admonition-title">Example: </p>
-<p><code>code example first function</code></p>
+<p>Add this block of code, containing the first function, below the users.</p>
+<div class="highlight"><pre><span></span><code><span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">getUserByUsername</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">users</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">username</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">u</span><span class="p">;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<p>This function allows us to access the username for each user.</p>
 </div>
-<!-- explanation of code block -->
-
 <div class="admonition example">
 <p class="admonition-title">Example: </p>
-<p><code>code example second function</code></p>
+<p>Paste this function below the first function.</p>
+<p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getUserByUsernameAndPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">users</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">username</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">password</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">u</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+This function gives us access to both the username and user.</p>
 </div>
-<!-- explanation of code block -->
-
 <details class="tip" open="open">
 <summary>External Databases</summary>
 <p>If using another database you would code the functions differently but the logic would remain the same.</p>
@@ -688,17 +722,19 @@
 <h3 id="4export-functions">4.Export Functions</h3>
 <p>This will allow you to access your database by importing the functions that query the database.</p>
 <div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example export and import codes</code></p>
+<p class="admonition-title">Export The Functions</p>
+<p>Add this block to the bottom of your fake-db.js. </p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">getUserByUsername</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">getUserByUsernameAndPassword</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+<p>This is how we export the functions to be used in our other files. You will need to import these functions into the files where they are used.</p>
 </div>
 <h2 id="setting-up-passportjs">Setting Up Passport.js</h2>
 <p>In this section you will be setting up passport so that you can use it in your app to authenticate users.</p>
 <h3 id="1create-a-file-named-passportjs">1.Create A File Named Passport.js</h3>
-<p>In this file you will be configuring passport for usage.</p>
-<div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example passport config</code></p>
-</div>
+<p>Create this file in the project folder. In this file you will be configuring passport for usage.</p>
 <h3 id="2import-libraries-files">2.Import Libraries &amp; Files</h3>
 <p>The libraries you will bring in will be:</p>
 <ul>
@@ -706,53 +742,90 @@
 <li>Local passport strategy</li>
 <li>Functions you made for querying db in fake-db.js.</li>
 </ul>
+<p>In app.js, you need to import all the files and libraries that you will be using.</p>
 <div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example import codes</code></p>
+<p class="admonition-title">Importing Files &amp; Libraries</p>
+<p>Paste these at the top of your app.js.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">express</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">bodyParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;body-parser&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;express-session&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;path&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">passport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./passport&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">express</span><span class="p">();</span>
+</code></pre></div>
 </div>
+<details class="success">
+<summary>Screenshot: App.js Imports</summary>
+<p>This is how the top of your app.js file should look.</p>
+<p><img alt="Imports" src="../images/imports.png" /></p>
+</details>
 <h3 id="3create-a-local-strategy-variable">3.Create A Local-Strategy Variable</h3>
-<p>To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process. This involves passing the username and password through a designated function and using the result to query a mock database.</p>
+<p>To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process.</p>
+<ul>
+<li>This involves passing the username and password through a function and using the result to query a mock database.</li>
+</ul>
 <div class="admonition example">
 <p class="admonition-title">Example: </p>
-<p><code>code example</code></p>
+<div class="highlight"><pre><span></span><code><span class="nx">code</span><span class="w"> </span><span class="nx">example</span>
+</code></pre></div>
 </div>
 <!-- explain the code below -->
 <!-- annotated code block with explanations on each line -->
 
-<p>The function will return a value that is either the user or undefined. This is used as the condition inside an if-statement. If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done to run passport's login function. If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done NOT to run passport's login function. Instead, it sends whatever message is inside the message.</p>
-<p>If the passport's login function is run, now passport will run the serializeUser function, which we will talk about now.</p>
+<!-- Make more concise -->
+<p>The function will return a value that is either the user or undefined. This is used as the condition inside an if-statement.</p>
+<p>If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done to run passport's login function.</p>
+<p>If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done 'NOT' to run passport's login function. Instead, it sends the error message to the console.</p>
+<p>If the passport's login function is run, passport will run the serializeUser function.</p>
 <h3 id="4create-serializeuser-function">4.Create serializeUser Function</h3>
 <p>This function stores the identifying logged in user id which in this case we have used username. This information is stored inside the sessions.</p>
 <div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example serializeUser</code></p>
+<p class="admonition-title">Function: serializeUser()</p>
+<p>Paste this into your passport.js below localStrategy().</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">passport</span><span class="p">.</span><span class="nx">serializeUser</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">username</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
 </div>
 <h3 id="5create-deserializeuser-function">5.Create deserializeUser Function</h3>
 <p>In this function the information that the done function inside the serialize function takes, which is the user's username, is used in deserializeUser. We use a function(name of function) from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside a variable.</p>
 <div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example deserializeUser</code></p>
+<p class="admonition-title">Function: deserializeUser()</p>
+<p>Paste this code below your serializeUser() function.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">passport</span><span class="p">.</span><span class="nx">deserializeUser</span><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getUserByUsername</span><span class="p">(</span><span class="nx">username</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">done</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;User not found&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">});</span>
+</code></pre></div>
 </div>
 <p>If the variable contains an object(username, password), we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.</p>
 <p>If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-</div>
-<!-- screenshot of console with message -->
+<!-- (Gary) put a pic if we can produce this error -->
 
 <h2 id="export-local-login">Export Local Login</h2>
-<p>You need to tell passport that you want to use local strategy and that you want to export passport so that it can be used in app.js.</p>
+<p>You need to tell passport that you want to use the local strategy and that you want to export passport so that it can be used in app.js.</p>
 <h3 id="1add-code-to-export-module">1.Add Code To Export Module</h3>
 <p>Add a line of code to the bottom of passport.js.</p>
 <div class="admonition example">
-<p class="admonition-title">Example: </p>
-<p><code>code example</code></p>
+<p class="admonition-title">Export Local Strategy</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">passport</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">localStrategy</span><span class="p">);</span>
+</code></pre></div>
 </div>
+<details class="success">
+<summary>Export Local Strategy</summary>
+<p>This is what the bottom of your passport.js should look like.</p>
+<p><img alt="Export" src="../images/export-local.png" /></p>
+</details>
 <p>By running this you modify passport to use your local login strategy. As well you can now export your modified passport to app.js.</p>
 <h2 id="conclusion">Conclusion</h2>
-<!-- need to write -->
+<p>On this page we learned about setting up the local strategy for passport.js. Move on to the next page to learn about implementing passport.js.</p>
 <div class="admonition success">
-<p class="admonition-title">Success</p>
+<p class="admonition-title">Congratulations</p>
+<p>You have successfully set up the local strategy, database, and functions to authenticate users.</p>
 </div>
 <p><a href="/routes">Next Page: Routes</a></p>
 

@@ -142,19 +142,27 @@ In app.js, you need to import all the files and libraries that you will be using
 
 ### 3.Create A Local-Strategy Variable
 
-To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process.
+To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process. This function will be created inside of your passport.js file.
 
-* This involves passing the username and password through a function and using the result to query a mock database.
+* Configuring a local strategy involves passing the username and password through a function and using the result to query a mock database.
 
-!!! example "Example: "
+!!! example "Function: Local Strategy"
+
+    This function is located in your passport.js file.
 
     ```js
-    code example
+      const localStrategy = new LocalStrategy((username, password, done) => {
+        const user = getUserByUsernameAndPassword(username, password);
+        if(user) {
+          done(null, user)
+        } else {
+          done(null, false, {
+            message: "Your login details are not valid. Please try again."
+          })
+        }
+      });
     ```
-<!-- explain the code below -->
-<!-- annotated code block with explanations on each line -->
 
-<!-- Make more concise -->
 The function will return a value that is either the user or undefined. This is used as the condition inside an if-statement.
 
 If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done to run passport's login function.
@@ -199,8 +207,6 @@ In this function the information that the done function inside the serialize fun
 If the variable contains an object(username, password), we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.
 
 If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.
-
-<!-- (Gary) put a pic if we can produce this error -->
 
 ## Export Local Login
 

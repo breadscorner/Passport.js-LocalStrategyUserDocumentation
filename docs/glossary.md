@@ -74,7 +74,7 @@ A request for information or data from a database or other data source, typicall
 
 In web development, routes define the paths or URLs that a user can access on a website or web application, and the functions or actions that should be executed when the user accesses those paths
 
-## Serialize and deserialize
+## Serialize & Deserialize
 
 The process of converting data from one format to another for storage, transmission, or processing. Serialization involves converting an object or data structure to a string or binary format, while deserialization involves converting the serialized data back into an object or data structure
 
@@ -82,7 +82,7 @@ The process of converting data from one format to another for storage, transmiss
 
 A way to persist data across multiple requests in a web application. A session is created when a user logs in or visits a website, and can store user-specific data such as login credentials, shopping cart items, or user preferences
 
-### Software registry
+### Software Registry
 
 A centralized database that stores information about software packages, such as their name, version, dependencies, and license. Users can search and download software packages from the registry, and developers can publish and manage their packages
 
@@ -101,7 +101,3 @@ If you would like to learn more about passport or other strategies check out the
 | Learn More |
 |:---------:|
 |[Passport.js](https://www.passportjs.org/)|
-
-
-
-<!-- use admonition to use the i for info pop up -->
