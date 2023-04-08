@@ -180,7 +180,7 @@ This form will contain the input boxes for the user. Paste the below htmll code 
         </form>
     ```
 
-??? note "Advanced Users"
+??? tip "Advanced Users"
 
     You can customize your form later but for this demonstration we will be covering the basics.
 

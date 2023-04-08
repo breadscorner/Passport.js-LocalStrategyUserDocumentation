@@ -820,7 +820,7 @@
 <h1 id="preliminary-setup">Preliminary Setup</h1>
 <h2 id="purpose-of-passportjs">Purpose Of Passport.js</h2>
 <blockquote>
-<p>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local <a href="../glossary/#strategies">strategy</a>.</p>
+<p>Before the installation process, you need to decide on the authentication strategy you want to implement first. The following instructions will guide you through the process of implementing the local <a href="../glossary/#strategies">strategy</a>, which is the authentication strategy for users that exist in your own database.</p>
 </blockquote>
 <h2 id="create-a-project-folder">Create A Project Folder</h2>
 <h3 id="1project-folder-creation">1.Project Folder Creation</h3>
@@ -872,16 +872,16 @@
 <summary>Updating JSON File</summary>
 <p>You can change this information later on inside the package.json file.</p>
 </details>
-<p>When using npm, it generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.</p>
+<p>When initializing npm, npm generates a package.json file that keeps track of all the libraries and modules utilized in your project. This feature is beneficial as it allows others to gain an understanding of what your project is reliant on, and helps to monitor which program versions are required for proper operation.</p>
 <p>Next, install the libraries you will need to complete this project. These libraries are passport, passport-local, express, express-sessions, and nodemon.</p>
 <p>2.To install passport.js to your local VSCode, with npm, use the following command:</p>
 <div class="admonition example">
 <p class="admonition-title">Windows:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>$ npm install passport passport-local express express-sessions nodemon</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>$ npm install passport passport-local express express-sessions nodemon body-parser</code></p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">MacOs:</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>npm install passport passport-local express express-sessions nodemon</code></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>npm install passport passport-local express express-sessions nodemon body-parser</code></p>
 </div>
 <p>Running this command will install the <a href="../glossary/#library">libraries</a> you need for the project. These files will be inside a folder called node_modules that is automatically created when you run these commands. To confirm that your files have been downloaded correctly you can check in the package.json file.</p>
 <p><a href="../glossary/#nodemon">Nodemon</a> facilitates fast Node.js app development by automatically restarting the application upon detecting changes in the project directory.</p>
@@ -889,13 +889,13 @@
 <summary>Screenshot: Successful Library Installation</summary>
 <p><img alt="Library Installation" src="../images/library-install.png" /> </p>
 </details>
-<p>These errors and warnings do not affect your ability to work with these libraries.</p>
+<p>The errors and warnings in the above screenshot do not affect your ability to work with these libraries.</p>
 <h2 id="setting-up-your-express-application">Setting Up Your Express Application</h2>
 <blockquote>
 <h3 id="purpose-of-express">Purpose Of Express</h3>
 <p>To integrate Passport.js into your project, it's necessary to establish an express application first, as Passport.js is tailored exclusively for express applications. Trying to implement passport.js without using express will create a number of edge cases that may cause issues with your program running successfully.</p>
 </blockquote>
-<p>In this section we will teach you how top create your index.html file and app.js file. The html file will hold your login form. The javascript file will be home to all of the functionality.</p>
+<p>In this section we will teach you how to create your index.html file and app.js file. The html file will hold your login form. The javascript file will be home to all of the functionality.</p>
 <h3 id="create-an-html-form">Create An HTML Form</h3>
 <h4 id="1create-an-html-file">1.Create An HTML File</h4>
 <p>This will be the file that contains your form. This file must be inside your project folder.</p>
@@ -918,25 +918,23 @@
 <div class="admonition example">
 <p class="admonition-title">HTML File</p>
 <p>Copy and paste the code below or look at the tip below for a shortcut.</p>
-<pre><code>```html
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    // Insert form here later
-  &lt;/body&gt;
-&lt;/html&gt;
-```
-</code></pre>
+<div class="highlight"><pre><span></span><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;en&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        // Insert form here later
+      <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
 </div>
 <details class="tip">
 <summary>Tip: Setting Your HTML Template</summary>
-<p>There is a VSCode shortcut that will set your template.</p>
+<p>There is a VSCode shortcut that will set your template. When you are in your file, print a ! and press the Enter key.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keys"><kbd class="key-exclam">!</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span></p>
 </details>
 <details class="success">
@@ -944,7 +942,7 @@
 <p><img alt="HTML File Setup" src="../images/html-file-setup.png" /> </p>
 </details>
 <h4 id="3create-an-html-form">3.Create An HTML Form</h4>
-<p>This form will contain the input boxes for the user. inside the body portion of your index.html file paste this form. It is a basic form that has a username and password as well as buttons for both logging in and out.</p>
+<p>This form will contain the input boxes for the user. Paste the below htmll code inside the body portion of your index.html file. It is a basic form that has a username and password as well as buttons for both logging in and logging out.</p>
 <div class="admonition example">
 <p class="admonition-title">HTML Form</p>
 <p>You can copy and paste this html form into the stated part of the body in your html file.</p>
@@ -966,10 +964,10 @@
 <p>Some features you may consider are:</p>
 <ul>
 <li>
-<p>Hide the logout button while users are not logged in and hide the login while users are logged in.</p>
+<p>Hiding the logout button while users are not logged in and hiding the login while users are logged in.</p>
 </li>
 <li>
-<p>CSS and designing an aesthetically appealing form.</p>
+<p>Designing an aesthetically appealing form with CSS.</p>
 </li>
 </ul>
 </details>
@@ -988,16 +986,16 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;2.Enable the button for logged in users.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;3.Create the logout function.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;4.Create an event listener for the button to work when clicked on.</p>
-<p>If you are not familiar with logout buttons revisit the topic and then return here.</p>
-<p>Here is a helpful resource on the topic of logout buttons:</p>
+<p>If you are not familiar with logout buttons, revisit the topic and then return here.</p>
+<p>Below is a helpful resource on the topic of logout buttons:</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://userfront.com/guide/build-logout-button-html">Logout Buttons</a></p>
 </details>
 <h3 id="create-the-javascript-file">Create The Javascript File</h3>
 <h4 id="1create-a-new-javascript-file">1.Create A New Javascript File</h4>
-<p>We need to create a Javascript file to add all of the routes and functionality of the login. Without this we would only be able to see the html form but not use it.</p>
+<p>We need to create a Javascript file to add all of the routes and functionality of the login. Without this, we would only be able to see the html form but not use it.</p>
 <div class="admonition warning">
 <p class="admonition-title">File Location</p>
-<p>This file must be inside your project folder. If it is not within the correct folders your routes may not work.</p>
+<p>This file must be inside your project folder. If it is not inside the correct folders your routes may not work.</p>
 </div>
 <details class="tip">
 <summary>Naming Your File</summary>
@@ -1074,7 +1072,7 @@
 <h3 id="local-browser">Local Browser</h3>
 <p>Here you will learn how to run your program locally using your localhost.</p>
 <h4 id="1script-command">1.Script Command</h4>
-<p>Find the script in your package.json file and that will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.</p>
+<p>Find the scripts value in your package.json file. That will be how you command the terminal to run your application. You may change this to a command such as nodemon app.js.</p>
 <p>Initially, a script will be provided from the installation of libraries. Change this to nodemon app.js. Now you will be able to run this command in your VSCode terminal to launch the project in your local browser.</p>
 <div class="admonition note">
 <p class="admonition-title">Note: Open package.json and add change script to start your express application</p>
@@ -1104,14 +1102,14 @@
 <details class="note">
 <summary>Script Command</summary>
 <p>Notice the dev value in the code block. </p>
-<p><code>nodemon.js</code></p>
-<p>This is how you will run your code in the VSCode terminal.</p>
+<p><code>nodemon app.js</code></p>
+<p>With this, <code>nodemon app.js</code> will run when you execute the script <code>npm run dev</code> in the VSCode terminal.</p>
 </details>
 <h4 id="2run-script-to-start-server">2.Run Script To Start Server</h4>
 <p>Remember when we installed nodemon? This is why we installed it.</p>
-<p>When you run your script, 'nodemon app.js', your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates.</p>
+<p>When you run your script, 'npm run dev', this will trigger the command 'nodemon app.js' and your program will run on the chosen localhost port. Nodemon will also make sure that your code updates and continues to run rather than having to run a script after any updates to your file.</p>
 <p>Now, run the script in your command terminal to start the server.</p>
-<p>You will now be able to see your program when you open localhost:8000. Localhost number is the port number declared in your app.js file.</p>
+<p>You will now be able to see your program when you open localhost:8000. Localhost number is the port number that was declared in your app.js file.</p>
 <details class="success">
 <summary>Screenshot: Port URL</summary>
 <p><img alt="Localhost:8000" src="../images/8000.png" />  </p>
