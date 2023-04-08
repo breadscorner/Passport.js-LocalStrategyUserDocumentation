@@ -396,8 +396,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-a-logout-route-and-enable-the-logout-using-reqlogout" class="md-nav__link">
-    4. Create a logout route and enable the logout using req.logout()
+  <a href="#4-create-logout-route" class="md-nav__link">
+    4. Create Logout Route
   </a>
   
 </li>
@@ -570,8 +570,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-create-a-logout-route-and-enable-the-logout-using-reqlogout" class="md-nav__link">
-    4. Create a logout route and enable the logout using req.logout()
+  <a href="#4-create-logout-route" class="md-nav__link">
+    4. Create Logout Route
   </a>
   
 </li>
@@ -631,22 +631,22 @@
 <p>This imports our modified passport module, which contains our local login strategy that we are exporting from inside of passport.js. Uncomment the following lines of code to allow passport.js to be used in your application.</p>
 <div class="admonition example">
 <p class="admonition-title">Code: Uncomment</p>
-<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">passport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./passport&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">passport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;./passport&quot;</span><span class="p">);</span>
 </code></pre></div>
 </div>
 <h3 id="2-use-appuse-to-initialize-passport">2. Use app.use() to initialize passport</h3>
 <p>Right now we have the following code commented out. We will need to uncomment them to allow the application to use passport.js.</p>
 <div class="admonition example">
 <p class="admonition-title">Code: Uncomment</p>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">passport</span><span class="p">.</span><span class="nx">initialize</span><span class="p">());</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">passport</span><span class="p">.</span><span class="nx">initialize</span><span class="p">());</span>
 </code></pre></div>
 </div>
-<p>This initializes passport so the application understands that we are using it.</p>
+<p>This initializes passport so the application understands that we are using passport inside our application.</p>
 <h3 id="3-connect-passport-to-sessions">3. Connect Passport To Sessions</h3>
 <p>Right now we have the following code commented out. We will need to uncomment them to allow the application to use passport.js.</p>
 <div class="admonition example">
 <p class="admonition-title">Code: Uncomment</p>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">passport</span><span class="p">.</span><span class="nx">session</span><span class="p">());</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">passport</span><span class="p">.</span><span class="nx">session</span><span class="p">());</span>
 </code></pre></div>
 </div>
 <p>By adding this line of code to the top of app.js we can ensure that passport connects to <a href="./glossary.md/sessions">sessions</a> so that we are storing the user information properly when we call the serializeUser function.</p>
@@ -697,11 +697,11 @@
 <p>Insert passport.authenticate into the POST "/login" route.</p>
 <div class="admonition example">
 <p class="admonition-title">Code</p>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">passport</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s2">&quot;local&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">successRedirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">failureRedirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/fail&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">failureMessage</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="p">}))</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">passport</span><span class="p">.</span><span class="nx">authenticate</span><span class="p">(</span><span class="s2">&quot;local&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">successRedirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">failureRedirect</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/fail&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">failureMessage</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}))</span>
 </code></pre></div>
 </div>
 <p>There are five parts to what we have done.  </p>
@@ -711,42 +711,42 @@
 <p>Local function tells passport to use the local strategy we have configured.  </p>
 </li>
 <li>
-<p>The success redirect line of code shows that if the username and password combination is valid, the user will be redirected to the "/" route.  </p>
+<p>The successRedirect line of code shows that if the username and password combination is valid, the user will be redirected to the "/" route.  </p>
 </li>
 <li>
-<p>The failure redirect line of code means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  </p>
+<p>The failureRedirect line of code means that if the username and password combination is invalid, the user will be redirected to the "/fail" route, which will inform the user that login failed.  </p>
 </li>
 <li>
 <p>Finally, failureMessage is set to "true", meaning that on a failure to validate this user, a message will be stored in req.session.messages for the server to use.  </p>
 </li>
 </ul>
-<h3 id="4-create-a-logout-route-and-enable-the-logout-using-reqlogout">4. Create a logout route and enable the logout using req.logout()</h3>
+<h3 id="4-create-logout-route">4. Create Logout Route</h3>
+<p>A logout route needs to be created to enable the logout button. This is done by using req.logout().</p>
 <div class="admonition example">
 <p class="admonition-title">Code</p>
-<div class="highlight"><pre><span></span><code><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/logout&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">req</span><span class="p">.</span><span class="nx">logout</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="w">    </span><span class="p">})</span>
-<span class="w">    </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
-<span class="p">})</span>
+<p>This route will be in your app.js file below the other routes. Uncomment it out.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/logout&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="w"> </span><span class="nx">res</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">req</span><span class="p">.</span><span class="nx">logout</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="w">      </span><span class="p">})</span>
+<span class="w">      </span><span class="nx">res</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">})</span>
 </code></pre></div>
 </div>
 <p>Here, we manage what happens when the user clicks the 'Logout' button. When req.logout(), a function that belongs to the passport library, is activated, the user session that a successful passport.authenticate() creates is destroyed. Because of this, the user will no longer have their username stored inside their browser's session. After this is performed successfully, res.redirect() will redirect the user to the "/" route.</p>
 <h2 id="passportauthenticate">Passport.authenticate</h2>
-<!-- Armaan double check please -->
-
 <p>There is a lot that happens inside passport.authenticate().</p>
-<details class="example">
+<details class="success">
 <summary>Passport.authenticate</summary>
 <p><img alt="Passport.authenticate" src="../images/pass-auth.png" /></p>
 </details>
 <p>When passport.authenticate() is run, it looks at the request that is sent to it from passport.js, more specifically the localStrategy() function.</p>
-<details class="example">
+<details class="success">
 <summary>Local Strategy Function</summary>
 <p><img alt="Local Strategy" src="../images/local-strat.png" /></p>
 </details>
 <p>Specifically, it looks for something that matches the username and password that it requires to run a function. In this case, this would be username and password that we have passed to it through the HTML form.</p>
-<details class="example">
+<details class="success">
 <summary>HTML Form</summary>
 <p><img alt="HTML Form" src="../images/htmlform.png" /></p>
 </details>
@@ -754,39 +754,39 @@
 <summary>Accessing Username &amp; Password</summary>
 <p>We access the username and password, which are located inside the body of the html, by using getUserByUsernameAndPassword function that pulls the username and password from our fake-db.</p>
 </details>
-<p>Once the function takes the username and password, these are placed into another function we made to check if there is a user. It checks that a user has both a username and password. That function will either return a user or 'false'.</p>
-<p>The returned value becomes a variable that we can pass into future functions. If 'true', or user, then the variable will run the function in the next step, if false you will be shown an error in the console.</p>
-<details class="example" open="open">
+<p>Once the function takes the username and password, these are passed into another function (getUserByUsernameAndPassword) we made to check if there is a user. It checks if a user exists that has both the username and password that was passed into the function. That function will either return a user object or 'false'.</p>
+<p>The returned value becomes the variable 'user'.</p>
+<details class="success">
 <summary>Fake-DB Function</summary>
 <p><img alt="Fake-db Functions" src="../images/strat1.png" /></p>
 </details>
 <p>The variable is used as a condition in an if statement.</p>
-<p>If the variable contains a user's information, we will run done(null, user), meaning that it will proceed to serializeUser().</p>
-<p>This function sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).</p>
-<details class="example" open="open">
+<p>If the variable contains a user's information, we will run done(null, user).</p>
+<p>done(null, user) sends the variable into passport.serializeUser(), which runs another done function: done(null, user.username).</p>
+<details class="success" open="open">
 <summary>serializeUser Function</summary>
 <p><img alt="serializeUser" src="../images/serial.png" /></p>
 </details>
-<p>This function first creates a session that contains the user's username. This session can be accessed in your routes as req.user. After being accessed, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.</p>
+<p>This function first creates a session that contains the user's username, which serves as the key for deserializeUser(), which gives you the user's data when you use 'req.user' within your app.js file. Then, it activates the successRedirect of passport.authenticate(), leading the user to a new webpage.</p>
 <details class="warning" open="open">
 <summary>Sessions Storing</summary>
 <p>If you are not comfortable with storing sessions read the documentation and return to this step.</p>
 <p><a href="https://www.freecodecamp.org/news/how-web-storage-works/#:~:text=Session%20storage%20allows%20you%20to,data%20stored%20in%20session%20storage.">Sessions Storage</a></p>
 </details>
-<details class="example" open="open">
+<details class="success" open="open">
 <summary>Route Redirects</summary>
 <p><img alt="Route Redirect" src="../images/sucfail.png" /></p>
 </details>
 <details class="danger" open="open">
 <summary>Variable Equals False</summary>
 <p>If the variable contains false, the program will run the following code:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your login details are not valid. Please try again.&quot;</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your login details are not valid. Please try again.&quot;</span><span class="p">})</span>
 </code></pre></div>
 </details>
-<p>This activates the failure redirect in passport.authenticate(), leading the user to a new webpage with an error. As well, if failure redirect is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.</p>
+<p>This activates the failureRedirect in passport.authenticate(), leading the user to a new webpage ("/fail") with an error. As well, if failureMessage is true, the message "Your login details are not valid. Please try again." will be saved in req.session.messages.</p>
 <h2 id="verify-successful-authentication">Verify Successful Authentication</h2>
 <p>To see if your passport.authenticate was successful or not, you can inspect the webpage.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;1.To complete this task go to the Storage tab at the top of the browser.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;1.If you are on Mac, go to the Storage tab at the top of the browser. If you are on PC, right-click to Inspect the webpage, and then go to the Storage tab.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;2.Click on Cookies.</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;3.If there is a session stored there, then that means your passport.authenticate() and passport.serializeUser() were successful.</p>
 <div class="admonition success">

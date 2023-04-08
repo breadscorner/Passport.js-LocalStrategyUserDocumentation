@@ -645,7 +645,7 @@
 
 <h1 id="strategies">Strategies</h1>
 <h2 id="set-up-a-database">Set Up A Database</h2>
-<p>For the purpose of this project we will be creating a fake db.</p>
+<p>For the purpose of this project we will be creating a fake database.</p>
 <details class="tip">
 <summary>Advanced Users</summary>
 <p>You can read documentation on the implementation of a real database, such as MySQL or MongoDB. You can swap out the fake database for a real one by following the documentation for those languages and technologies.</p>
@@ -653,10 +653,10 @@
 </details>
 <h3 id="1create-a-file">1.Create A File</h3>
 <p>This file will be named fake-db.js.</p>
-<p>Inside this file we have created an array containing objects. Each object will contain a username and password.</p>
+<p>Inside this file we will create an array containing objects. Each object will contain a username and password.</p>
 <h3 id="2create-a-variable">2.Create a Variable</h3>
 <p>Inside the fake-db.js you will create a variable.</p>
-<p>This will contain the fake database of users and passwords that you can use to access the program.</p>
+<p>This will contain a fake database of users and passwords that you can access for the purposes of user authentication.</p>
 <details class="example">
 <summary>Fake Database</summary>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
@@ -683,7 +683,7 @@
 <p>Both of these functions will return the entire object(username and password) associated with the requested user.</p>
 <div class="admonition example">
 <p class="admonition-title">Example: </p>
-<p>Add this block of code, containing the first function, below the users.</p>
+<p>Add this block of code, containing the first function, below the users variable.</p>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getUserByUsername</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">users</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -694,11 +694,11 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div>
-<p>This function allows us to access the username for each user.</p>
+<p>This function returns all the data that we have for a user that matches the username.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example: </p>
-<p>Paste this function below the first function.</p>
+<p>Paste this function below the getUserByUsername function.</p>
 <p><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">getUserByUsernameAndPassword</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">users</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">u</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
@@ -711,11 +711,11 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div>
-This function gives us access to both the username and user.</p>
+This function returns all the data that we have for a user that matches the username and password.</p>
 </div>
 <details class="tip" open="open">
 <summary>External Databases</summary>
-<p>If using another database you would code the functions differently but the logic would remain the same.</p>
+<p>If using another database you would code the functions differently, but result of these functions remain the same in that they must return an object.</p>
 </details>
 <h3 id="4export-functions">4.Export Functions</h3>
 <p>This will allow you to access your database by importing the functions that query the database.</p>
@@ -738,7 +738,7 @@ This function gives us access to both the username and user.</p>
 <ul>
 <li>Passport library</li>
 <li>Local passport strategy</li>
-<li>Functions you made for querying db in fake-db.js.</li>
+<li>Functions you made for querying your database in fake-db.js.</li>
 </ul>
 <p>In app.js, you need to import all the files and libraries that you will be using.</p>
 <div class="admonition example">
@@ -758,25 +758,32 @@ This function gives us access to both the username and user.</p>
 <p><img alt="Imports" src="../images/imports.png" /></p>
 </details>
 <h3 id="3create-a-local-strategy-variable">3.Create A Local-Strategy Variable</h3>
-<p>To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process.</p>
+<p>To configure local strategy for authentication, you must specify the authentication criteria and define the authorization process. This function will be created inside of your passport.js file.</p>
 <ul>
-<li>This involves passing the username and password through a function and using the result to query a mock database.</li>
+<li>Configuring a local strategy involves passing the username and password through a function and using the result to query a mock database.</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Example: </p>
-<div class="highlight"><pre><span></span><code><span class="nx">code</span><span class="w"> </span><span class="nx">example</span>
+<p class="admonition-title">Function: Local Strategy</p>
+<p>This function is located in your passport.js file.</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">localStrategy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LocalStrategy</span><span class="p">(</span>
+<span class="w">    </span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">,</span><span class="w"> </span><span class="nx">done</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getUserByUsernameAndPassword</span><span class="p">(</span><span class="nx">username</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">);</span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">user</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">done</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Your login details are not valid. Please try again.&quot;</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">);</span>
 </code></pre></div>
 </div>
-<!-- explain the code below -->
-<!-- annotated code block with explanations on each line -->
-
-<!-- Make more concise -->
 <p>The function will return a value that is either the user or undefined. This is used as the condition inside an if-statement.</p>
-<p>If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done to run passport's login function.</p>
-<p>If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done 'NOT' to run passport's login function. Instead, it sends the error message to the console.</p>
-<p>If the passport's login function is run, passport will run the serializeUser function.</p>
+<p>If the value is a user, you run the function done(null, user). Null indicates that there are no errors, and user tells done() to run passport's serializeUser() function.</p>
+<p>If the value is false, you run the function done(null, false, {message: ""}). Null indicates that there are no errors, and false tells done 'NOT' to run passport's login function. Instead, it will store the message inside your console's <a href="../glossary/#sessions">session</a>.</p>
 <h3 id="4create-serializeuser-function">4.Create serializeUser Function</h3>
-<p>This function stores the identifying logged in user id which in this case we have used username. This information is stored inside the sessions.</p>
+<p>This function stores the successfully logged in user's id into the browser's session. In this case, the user's id will be their username, but normally, it should be a piece of data about the user that is unique and cannot be changed.</p>
 <div class="admonition example">
 <p class="admonition-title">Function: serializeUser()</p>
 <p>Paste this into your passport.js below localStrategy().</p>
@@ -786,7 +793,7 @@ This function gives us access to both the username and user.</p>
 </code></pre></div>
 </div>
 <h3 id="5create-deserializeuser-function">5.Create deserializeUser Function</h3>
-<p>In this function the information that the done function inside the serialize function takes, which is the user's username, is used in deserializeUser. We use a function(name of function) from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside a variable.</p>
+<p>In this function the information that the done function inside the serializeUser function takes, which is the user's username, is used in deserializeUser. We use the getUserByUsername() function from our fake-db.js to query for the user based off of their username. The returned value from that function is stored inside the variable 'user'.</p>
 <div class="admonition example">
 <p class="admonition-title">Function: deserializeUser()</p>
 <p>Paste this code below your serializeUser() function.</p>
@@ -800,10 +807,8 @@ This function gives us access to both the username and user.</p>
 <span class="w">  </span><span class="p">});</span>
 </code></pre></div>
 </div>
-<p>If the variable contains an object(username, password), we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.</p>
-<p>If the variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.</p>
-<!-- (Gary) put a pic if we can produce this error -->
-
+<p>If the 'user' variable contains a value, indicating that getUserByUsername was successful, we run done(null, user). This done function puts the user object inside req.user, which can be accessed for a future usage.</p>
+<p>If the 'user variable contains undefined, we run done({message: ""}, null), where the message is sent to the servers console(VSCode console) to tell the user that the function failed to retrieve a matching user with the requested username.</p>
 <h2 id="export-local-login">Export Local Login</h2>
 <p>You need to tell passport that you want to use the local strategy and that you want to export passport so that it can be used in app.js.</p>
 <h3 id="1add-code-to-export-module">1.Add Code To Export Module</h3>
@@ -818,7 +823,7 @@ This function gives us access to both the username and user.</p>
 <p>This is what the bottom of your passport.js should look like.</p>
 <p><img alt="Export" src="../images/export-local.png" /></p>
 </details>
-<p>By running this you modify passport to use your local login strategy. As well you can now export your modified passport to app.js.</p>
+<p>By running this you modify the passport library to use your local login strategy. Because of this, you can now export your modified passport to app.js.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>On this page we learned about setting up the local strategy for passport.js. Move on to the next page to learn about implementing passport.js.</p>
 <div class="admonition success">
