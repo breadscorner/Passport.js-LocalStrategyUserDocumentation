@@ -74,7 +74,7 @@ A request for information or data from a database or other data source, typicall
 
 In web development, routes define the paths or URLs that a user can access on a website or web application, and the functions or actions that should be executed when the user accesses those paths
 
-## Serialize & Deserialize
+### Serialize & Deserialize
 
 The process of converting data from one format to another for storage, transmission, or processing. Serialization involves converting an object or data structure to a string or binary format, while deserialization involves converting the serialized data back into an object or data structure
 
